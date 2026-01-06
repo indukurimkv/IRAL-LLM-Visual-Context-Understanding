@@ -28,6 +28,29 @@ from sklearn.metrics import confusion_matrix
 # Load environment variables from .env file
 load_dotenv()
 
+PROMPT = """
+You are inspecting an environment for anomalies and hazards. Use the following definitions:
+
+    Hazard: Any source of potential damage, harm, or adverse health effects on something or someone under certain conditions at work.
+
+    Anomaly: A scene element that is out of place or unusual but not necessarily dangerous. It is something that breaks expected object–context relations (interposition, support, probability, position, or familiar size); appears in an unlikely place or state; rests on an impossible surface; has an unrealistic size relative to nearby objects; or appears different from its default expected appearance.
+
+You MUST obey this strict output format:
+
+    <code>: <one-sentence explanation>
+
+Where <code> is ONLY one of:
+    00 = Safe
+    10 = Anomalous
+    01 = Dangerous
+    11 = Anomalous Dangerous
+
+RULES:
+    - The FIRST characters in your output MUST be the 2-digit code.
+    - Do NOT add any text, words, markdown, or labels before the code.
+    - After the code, type a colon and a concise explanation.
+    - no bullet points.
+"""
 
 class RoboflowAPIClient:
     """Client for interacting with Roboflow REST API."""
@@ -192,13 +215,6 @@ class OpenRouterClient:
             # Create data URL for embedding image in API request
             image_data_url = f"data:image/{image_format};base64,{image_base64}"
             
-            # Create classification prompt specifying expected output format
-            prompt = (
-                "Analyze this image and provide a 2-digit numeric code in format AH "
-                "where A=anomaly (0 or 1) and H=hazard (0 or 1). "
-                "Only respond with the 2-digit code."
-            )
-            
             # Make vision API call with text prompt and image
             response = self.client.chat.completions.create(
                 model=self.model,
@@ -206,7 +222,7 @@ class OpenRouterClient:
                     {
                         "role": "user",
                         "content": [
-                            {"type": "text", "text": prompt},
+                            {"type": "text", "text": PROMPT},
                             {
                                 "type": "image_url",
                                 "image_url": {"url": image_data_url}
@@ -214,7 +230,7 @@ class OpenRouterClient:
                         ]
                     }
                 ],
-                max_tokens=10  # Limit response length since we only need 2 digits
+                max_tokens=200  # Limit response length since we only need 2 digits
             )
             
             # Extract model's text response
