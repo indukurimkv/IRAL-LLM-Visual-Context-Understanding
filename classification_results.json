@@ -1,0 +1,46 @@
+{
+  "results": [
+    {
+      "image_name": "2284.png",
+      "image_id": "VgUi4JygVBe9D9c9oA97",
+      "ground_truth": "00",
+      "model_prediction": "00",
+      "model_response": "00",
+      "timestamp": "2026-01-05T23:27:19.501741",
+      "match": true
+    }
+  ],
+  "errors": [
+    {
+      "image_name": "2306.png",
+      "error": "401 Client Error: Unauthorized for url: https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/r3Bbl9RVhSDU8ZVPf7uK/original.jpg",
+      "timestamp": "2026-01-05T23:27:15.657264"
+    },
+    {
+      "image_name": "2014.png",
+      "error": "401 Client Error: Unauthorized for url: https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/781rGblmCTHhWj3obtbF/original.jpg",
+      "timestamp": "2026-01-05T23:27:23.637510"
+    },
+    {
+      "image_name": "0000334_01569_d_0000029.jpg",
+      "error": "401 Client Error: Unauthorized for url: https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/SifG7P9TyvQP4dbMsL6C/original.jpg",
+      "timestamp": "2026-01-05T23:27:27.779265"
+    },
+    {
+      "image_name": "9999999_00719_d_0000327.jpg",
+      "error": "401 Client Error: Unauthorized for url: https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/Pbt9qvzC3Bid8UNNK82L/original.jpg",
+      "timestamp": "2026-01-05T23:27:32.152774"
+    },
+    {
+      "image_name": "9999969_00000_d_0000037.jpg",
+      "error": "401 Client Error: Unauthorized for url: https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/R2LYctMICBL2nOZCgzTk/original.jpg",
+      "timestamp": "2026-01-05T23:27:36.222052"
+    }
+  ],
+  "summary": {
+    "total_images": 6,
+    "successful": 1,
+    "failed": 5,
+    "accuracy": 1.0
+  }
+}

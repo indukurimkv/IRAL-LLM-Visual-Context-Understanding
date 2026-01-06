@@ -37,30 +37,81 @@ class RoboflowAPIClient:
         # Construct base URL for API requests
         self.base_url = f"https://api.roboflow.com/{workspace_id}/{project_id}"
         # Set authorization header for authenticated requests
-        self.headers = {"Authorization": f"Bearer {api_key}"}
+        self.headers = {
+            "Authorization": f"Bearer {api_key}",
+            "Content-Type": "application/json"
+        }
     
     def get_images_list(self) -> List[Dict]:
-        """Fetch list of all images in the project."""
+        """Fetch list of all images in the project using the search endpoint."""
         try:
-            # GET request to base URL returns list of all images
-            response = requests.get(self.base_url, headers=self.headers, timeout=30)
-            # Raise exception if HTTP status indicates error
-            response.raise_for_status()
-            # Parse and return JSON response
-            return response.json()
+            # Use the project-level search endpoint with API key in query parameter
+            search_url = f"{self.base_url}/search?api_key={self.api_key}"
+            all_images = []
+            limit = 100  # Number of images per page
+            offset = 0
+            
+            while True:
+                # POST request to search endpoint with in_dataset filter
+                # Body only contains in_dataset as specified
+                payload = {
+                    "in_dataset": True
+                }
+                # Add pagination query parameters if not first page
+                paginated_url = search_url
+                if offset > 0:
+                    paginated_url = f"{search_url}&offset={offset}&limit={limit}"
+                
+                response = requests.post(
+                    paginated_url, 
+                    headers={"Content-Type": "application/json"}, 
+                    json=payload,
+                    timeout=30
+                )
+                # Raise exception if HTTP status indicates error
+                response.raise_for_status()
+                # Parse JSON response
+                data = response.json()
+                # Extract images from results field
+                images = data.get("results", [])
+                if not images:
+                    # No more images to fetch
+                    break
+                all_images.extend(images)
+                
+                # Check pagination - get total
+                total = data.get("total", 0)
+                
+                # Check if we've fetched all images
+                if total > 0 and len(all_images) >= total:
+                    # Fetched all images
+                    break
+                if len(images) < limit:
+                    # Last page, no more images
+                    break
+                # Move to next page
+                offset += limit
+            
+            return all_images
         except requests.exceptions.RequestException as e:
             print(f"Error fetching images list: {e}")
             raise
     
     def get_image_metadata(self, image_id: str) -> Dict:
         """Fetch full metadata for a specific image including annotations."""
-        # Construct URL for specific image endpoint
-        image_url = f"{self.base_url}/images/{image_id}"
+        # Construct URL for specific image tags endpoint with API key in query parameter
+        image_url = f"{self.base_url}/images/{image_id}?api_key={self.api_key}"
         try:
-            # Fetch detailed metadata including annotations
-            response = requests.get(image_url, headers=self.headers, timeout=30)
+            # POST request to fetch detailed metadata including annotations
+            response = requests.get(
+                image_url, 
+                headers={"Content-Type": "application/json"}, 
+                timeout=30
+            )
             response.raise_for_status()
-            return response.json()
+            data = response.json()
+            # Response is in format {"image": {...}}, extract the image object
+            return data.get("image", data)
         except requests.exceptions.RequestException as e:
             print(f"Error fetching image metadata for {image_id}: {e}")
             raise
@@ -84,41 +135,31 @@ class AnnotationParser:
     @staticmethod
     def extract_prefix_code(annotation_data: Dict) -> Optional[str]:
         """
-        Extract prefix code from annotations["hazards-and-anomalies"]["converted"].
+        Extract prefix code from annotation.textAnnotations[0].prefix.
         
         Returns the 2-digit code (format: AH) or None if not found.
         """
         try:
-            # Check if hazards-and-anomalies annotation exists
-            if "annotations" not in annotation_data:
+            # Check if annotation exists
+            if "annotation" not in annotation_data:
                 return None
             
-            # Navigate to hazards-and-anomalies annotation
-            annotations = annotation_data.get("annotations", {})
-            hazards_annotation = annotations.get("hazards-and-anomalies", {})
-            
-            if not hazards_annotation:
+            # Navigate to annotation object
+            annotation = annotation_data.get("annotation", {})
+            if not annotation:
                 return None
             
-            # The "converted" field contains a JSON string
-            converted_str = hazards_annotation.get("converted")
-            if not converted_str:
-                return None
-            
-            # Parse the JSON string
-            converted_data = json.loads(converted_str)
-            
-            # Extract prefix from first text annotation (ground truth code)
-            text_annotations = converted_data.get("textAnnotations", [])
+            # Extract textAnnotations array
+            text_annotations = annotation.get("textAnnotations", [])
             if not text_annotations:
                 return None
             
-            # Get prefix code (format: AH where A=anomaly, H=hazard)
+            # Get prefix code from first text annotation (format: AH where A=anomaly, H=hazard)
             prefix = text_annotations[0].get("prefix")
             return prefix if prefix else None
             
-        except (KeyError, json.JSONDecodeError, IndexError) as e:
-            # Handle missing keys, invalid JSON, or empty lists gracefully
+        except (KeyError, IndexError) as e:
+            # Handle missing keys or empty lists gracefully
             print(f"Error parsing annotation: {e}")
             return None
 
@@ -248,9 +289,11 @@ class ClassificationProcessor:
                 print(f"Skipping {image_name}: No annotation found")
                 return None
             
-            # Download image - try direct URL first, fallback to constructed download URL
+            # Download image - use original URL from urls.original, fallback to constructed download URL
             image_url = None
-            if "url" in image_metadata:
+            if "urls" in image_metadata and "original" in image_metadata["urls"]:
+                image_url = image_metadata["urls"]["original"]
+            elif "url" in image_metadata:
                 image_url = image_metadata["url"]
             else:
                 # Construct download URL using image ID
