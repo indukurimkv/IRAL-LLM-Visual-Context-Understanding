@@ -120,7 +120,7 @@ class RoboflowAPIClient:
         """Download image from URL."""
         try:
             # Download raw image bytes from URL
-            response = requests.get(image_url, headers=self.headers, timeout=30)
+            response = requests.get(image_url, timeout=30)
             response.raise_for_status()
             # Return binary content (image data)
             return response.content
