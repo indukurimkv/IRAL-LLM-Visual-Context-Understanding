@@ -50,8 +50,13 @@ class ClassificationProcessor:
                     # Last attempt failed, re-raise exception
                     raise
     
-    def process_image(self, image_metadata: Dict) -> Optional[Dict]:
-        """Process a single image: extract annotation, download, classify."""
+    def process_image(self, image_metadata: Dict, image_data: bytes = None) -> Optional[Dict]:
+        """Process a single image: extract annotation, download (if needed), classify.
+
+        If `image_data` is provided, it will be used directly and no download
+        from Roboflow will be attempted. This enables preloading images once
+        and reusing them for multiple model queries.
+        """
         try:
             # Extract image identifier and name from metadata
             image_name = image_metadata.get("name", "unknown")
@@ -76,10 +81,11 @@ class ClassificationProcessor:
                 # Construct download URL using image ID
                 image_url = f"{self.roboflow_client.base_url}/images/{image_id}/download"
             
-            # Download image with retry logic
-            image_data = self.process_with_retry(
-                self.roboflow_client.download_image, image_url
-            )
+            # Download image with retry logic if not provided by caller
+            if image_data is None:
+                image_data = self.process_with_retry(
+                    self.roboflow_client.download_image, image_url
+                )
             
             # Determine image format from file extension (for base64 encoding)
             image_format = image_name.split('.')[-1].lower() if '.' in image_name else "png"
@@ -151,6 +157,43 @@ class ClassificationProcessor:
                 progress_callback(idx, len(images_list))
             
             # Rate limiting - small delay between requests to avoid API throttling
+            time.sleep(0.5)
+
+    def process_preloaded_images(self, preloaded_images: List[Dict], progress_callback=None):
+        """Process a list of preloaded images.
+
+        Each item in `preloaded_images` should be a dict with keys:
+            - "metadata": the image metadata dict (same format as get_image_metadata)
+            - "image_data": raw bytes of the image
+
+        This method avoids any Roboflow API calls and is intended to be used
+        when images have been fetched once and should be classified by
+        multiple different models.
+        """
+        total = len(preloaded_images)
+        for idx, item in enumerate(preloaded_images, 1):
+            metadata = item.get("metadata")
+            image_data = item.get("image_data")
+            if not metadata:
+                print(f"Skipping preloaded item without metadata: {item}")
+                continue
+
+            print(f"Processing {idx}/{total}: {metadata.get('name', 'unknown')}")
+            try:
+                result = self.process_image(metadata, image_data=image_data)
+                if result:
+                    self.results.append(result)
+            except Exception as e:
+                error_msg = f"Error processing preloaded image {metadata.get('name', 'unknown')}: {e}"
+                print(error_msg)
+                self.errors.append({
+                    "image_name": metadata.get('name', 'unknown'),
+                    "error": str(e)
+                })
+
+            if progress_callback:
+                progress_callback(idx, total)
+
             time.sleep(0.5)
     
     def save_results(self, output_file: str, confusion_matrix_file: Optional[str] = None):

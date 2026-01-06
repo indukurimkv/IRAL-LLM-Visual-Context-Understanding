@@ -58,7 +58,7 @@ def main():
     parser.add_argument(
         "--model",
         default="anthropic/claude-3.5-sonnet",
-        help="OpenRouter model to use (default: anthropic/claude-3.5-sonnet)"
+        help="OpenRouter model(s) to use. Comma-separated list supported (default: anthropic/claude-3.5-sonnet)"
     )
     parser.add_argument(
         "--confusion-matrix-output",
@@ -106,32 +106,76 @@ def main():
         args.workspace_id,
         args.project_id
     )
-    
-    # Use mock client if mock mode is enabled, otherwise use real client
-    if args.mock_mode:
-        print("MOCK MODE ENABLED: Simulating OpenRouter API responses (no API calls will be made)")
-        if args.mock_seed is not None:
-            print(f"Using random seed: {args.mock_seed} (results will be reproducible)")
-        openrouter_client = MockOpenRouterClient(seed=args.mock_seed)
-    else:
-        openrouter_client = OpenRouterClient(args.openrouter_api_key, args.model)
-    
-    # Create main processor that orchestrates the workflow
-    processor = ClassificationProcessor(roboflow_client, openrouter_client)
-    
-    # Process all images in the project
+    # Parse models list (support comma-separated for backward compatibility)
+    models = [m.strip() for m in args.model.split(',') if m.strip()]
+
+    # Preload all image metadata and image bytes from Roboflow once
+    print("Fetching images and downloading image data from Roboflow (once)...")
     try:
-        processor.process_all_images()
-    except KeyboardInterrupt:
-        # Handle user interruption gracefully - save partial results
-        print("\nInterrupted by user. Saving partial results...")
+        images_list = roboflow_client.get_images_list()
     except Exception as e:
-        # Handle fatal errors
-        print(f"Fatal error: {e}")
+        print(f"Error fetching images list: {e}")
         sys.exit(1)
-    
-    # Save all results and statistics to JSON file
-    processor.save_results(args.output, args.confusion_matrix_output)
+
+    preloaded = []
+    for idx, img_summary in enumerate(images_list, 1):
+        image_id = img_summary.get("id")
+        if not image_id:
+            print(f"Skipping image without ID: {img_summary}")
+            continue
+
+        try:
+            metadata = roboflow_client.get_image_metadata(image_id)
+            # Determine image URL similar to processor logic
+            image_url = None
+            if "urls" in metadata and "original" in metadata["urls"]:
+                image_url = metadata["urls"]["original"]
+            elif "url" in metadata:
+                image_url = metadata["url"]
+            else:
+                image_url = f"{roboflow_client.base_url}/images/{image_id}/download"
+
+            image_data = roboflow_client.download_image(image_url)
+            preloaded.append({"metadata": metadata, "image_data": image_data})
+        except KeyboardInterrupt:
+            print("\nInterrupted while preloading images. Exiting.")
+            sys.exit(1)
+        except Exception as e:
+            print(f"Warning: failed to preload image {image_id}: {e}")
+
+    print(f"Preloaded {len(preloaded)} images. Now running models: {models}")
+
+    # For each model, instantiate an OpenRouter client and process preloaded images
+    for model in models:
+        model_safe = model.replace('/', '_')
+        print(f"\nRunning model: {model} -> output prefix: {model_safe}")
+
+        if args.mock_mode:
+            print("MOCK MODE ENABLED: Simulating OpenRouter API responses (no API calls will be made)")
+            if args.mock_seed is not None:
+                print(f"Using random seed: {args.mock_seed} (results will be reproducible)")
+            openrouter_client = MockOpenRouterClient(seed=args.mock_seed)
+        else:
+            openrouter_client = OpenRouterClient(args.openrouter_api_key, model)
+
+        processor = ClassificationProcessor(roboflow_client, openrouter_client)
+
+        try:
+            processor.process_preloaded_images(preloaded)
+        except KeyboardInterrupt:
+            print("\nInterrupted by user while processing. Saving partial results for this model...")
+        except Exception as e:
+            print(f"Fatal error while processing with model {model}: {e}")
+            continue
+
+        # Prefix output filenames with model name to avoid collisions
+        output_prefixed = f"{model_safe}_{args.output}"
+        if args.confusion_matrix_output:
+            confusion_prefixed = f"{model_safe}_{args.confusion_matrix_output}"
+        else:
+            confusion_prefixed = None
+
+        processor.save_results(output_prefixed, confusion_prefixed)
 
 
 if __name__ == "__main__":
