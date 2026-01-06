@@ -1,14 +1,465 @@
 {
-  "results": [],
+  "results": [
+    {
+      "image_name": "2306.png",
+      "image_id": "r3Bbl9RVhSDU8ZVPf7uK",
+      "ground_truth": "00",
+      "model_prediction": "10",
+      "model_response": "10: Anomalous: Anomaly detected but no hazards",
+      "timestamp": "2026-01-06T09:52:22.185319",
+      "match": false
+    },
+    {
+      "image_name": "2284.png",
+      "image_id": "VgUi4JygVBe9D9c9oA97",
+      "ground_truth": "00",
+      "model_prediction": "00",
+      "model_response": "00: Safe: No anomalies or hazards detected",
+      "timestamp": "2026-01-06T09:52:23.142679",
+      "match": true
+    },
+    {
+      "image_name": "2014.png",
+      "image_id": "781rGblmCTHhWj3obtbF",
+      "ground_truth": "00",
+      "model_prediction": "01",
+      "model_response": "01: Dangerous: Hazard detected but no anomalies",
+      "timestamp": "2026-01-06T09:52:24.016288",
+      "match": false
+    },
+    {
+      "image_name": "0000334_01569_d_0000029.jpg",
+      "image_id": "SifG7P9TyvQP4dbMsL6C",
+      "ground_truth": "00",
+      "model_prediction": "10",
+      "model_response": "10: Anomalous: Anomaly detected but no hazards",
+      "timestamp": "2026-01-06T09:52:24.852994",
+      "match": false
+    },
+    {
+      "image_name": "9999999_00719_d_0000327.jpg",
+      "image_id": "Pbt9qvzC3Bid8UNNK82L",
+      "ground_truth": "00",
+      "model_prediction": "00",
+      "model_response": "00: Safe: No anomalies or hazards detected",
+      "timestamp": "2026-01-06T09:52:25.953770",
+      "match": true
+    },
+    {
+      "image_name": "9999969_00000_d_0000037.jpg",
+      "image_id": "R2LYctMICBL2nOZCgzTk",
+      "ground_truth": "11",
+      "model_prediction": "10",
+      "model_response": "10: Anomalous: Anomaly detected but no hazards",
+      "timestamp": "2026-01-06T09:52:26.859060",
+      "match": false
+    },
+    {
+      "image_name": "9999955_00000_d_0000249.jpg",
+      "image_id": "Q8lhcERaysiLopxEB4DG",
+      "ground_truth": "00",
+      "model_prediction": "10",
+      "model_response": "10: Anomalous: Anomaly detected but no hazards",
+      "timestamp": "2026-01-06T09:52:28.207843",
+      "match": false
+    },
+    {
+      "image_name": "9999955_00000_d_0000028.jpg",
+      "image_id": "UGMZ3NrhXMmy6PQSLTpF",
+      "ground_truth": "00",
+      "model_prediction": "10",
+      "model_response": "10: Anomalous: Anomaly detected but no hazards",
+      "timestamp": "2026-01-06T09:52:29.126585",
+      "match": false
+    },
+    {
+      "image_name": "2274.png",
+      "image_id": "sFJx21em7clAORpQbZKj",
+      "ground_truth": "00",
+      "model_prediction": "01",
+      "model_response": "01: Dangerous: Hazard detected but no anomalies",
+      "timestamp": "2026-01-06T09:52:30.303297",
+      "match": false
+    },
+    {
+      "image_name": "2323.png",
+      "image_id": "xkVpJNGnOSGgu1jN9izM",
+      "ground_truth": "00",
+      "model_prediction": "10",
+      "model_response": "10: Anomalous: Anomaly detected but no hazards",
+      "timestamp": "2026-01-06T09:52:31.240170",
+      "match": false
+    },
+    {
+      "image_name": "2298.png",
+      "image_id": "8kpjVaevGcvKrjHxaKcf",
+      "ground_truth": "00",
+      "model_prediction": "10",
+      "model_response": "10: Anomalous: Anomaly detected but no hazards",
+      "timestamp": "2026-01-06T09:52:32.280873",
+      "match": false
+    },
+    {
+      "image_name": "2264.png",
+      "image_id": "1TrnNJfWdQvhFuPYjH45",
+      "ground_truth": "00",
+      "model_prediction": "01",
+      "model_response": "01: Dangerous: Hazard detected but no anomalies",
+      "timestamp": "2026-01-06T09:52:33.219577",
+      "match": false
+    },
+    {
+      "image_name": "9999984_00000_d_0000106.jpg",
+      "image_id": "PsTA2bbgWfwixYIXdpZM",
+      "ground_truth": "00",
+      "model_prediction": "01",
+      "model_response": "01: Dangerous: Hazard detected but no anomalies",
+      "timestamp": "2026-01-06T09:52:34.140487",
+      "match": false
+    },
+    {
+      "image_name": "0000305_00001_d_0000213.jpg",
+      "image_id": "UF0uX4yfJvyLj68coTRV",
+      "ground_truth": "00",
+      "model_prediction": "11",
+      "model_response": "11: Anomalous Dangerous: Both anomaly and hazard detected",
+      "timestamp": "2026-01-06T09:52:34.974743",
+      "match": false
+    },
+    {
+      "image_name": "Gemini_Generated_Image_msemnqmsemnqmsem.png",
+      "image_id": "BsMZgHtCAMdxWX6tSCpG",
+      "ground_truth": "00",
+      "model_prediction": "11",
+      "model_response": "11: Anomalous Dangerous: Both anomaly and hazard detected",
+      "timestamp": "2026-01-06T09:52:36.109156",
+      "match": false
+    },
+    {
+      "image_name": "9999955_00000_d_0000177.jpg",
+      "image_id": "UCPPh12x98xZjUHynuto",
+      "ground_truth": "00",
+      "model_prediction": "11",
+      "model_response": "11: Anomalous Dangerous: Both anomaly and hazard detected",
+      "timestamp": "2026-01-06T09:52:37.039481",
+      "match": false
+    },
+    {
+      "image_name": "9999987_00000_d_0000039.jpg",
+      "image_id": "VtXdPlwgjqywirLu8mj9",
+      "ground_truth": "00",
+      "model_prediction": "10",
+      "model_response": "10: Anomalous: Anomaly detected but no hazards",
+      "timestamp": "2026-01-06T09:52:38.038884",
+      "match": false
+    },
+    {
+      "image_name": "9999937_00000_d_0000128.jpg",
+      "image_id": "Sqr8TtyCvlqjvtir95ks",
+      "ground_truth": "00",
+      "model_prediction": "11",
+      "model_response": "11: Anomalous Dangerous: Both anomaly and hazard detected",
+      "timestamp": "2026-01-06T09:52:39.027568",
+      "match": false
+    },
+    {
+      "image_name": "2236.png",
+      "image_id": "WWbfMzxk0LsK5Ph6qZ9R",
+      "ground_truth": "00",
+      "model_prediction": "11",
+      "model_response": "11: Anomalous Dangerous: Both anomaly and hazard detected",
+      "timestamp": "2026-01-06T09:52:39.962202",
+      "match": false
+    },
+    {
+      "image_name": "2325.png",
+      "image_id": "eTsXnS4NxGdMV5EV0kYp",
+      "ground_truth": "00",
+      "model_prediction": "10",
+      "model_response": "10: Anomalous: Anomaly detected but no hazards",
+      "timestamp": "2026-01-06T09:52:40.869548",
+      "match": false
+    },
+    {
+      "image_name": "9999972_00000_d_0000137.jpg",
+      "image_id": "Q5acqZ2M7ZYDK74vhAoz",
+      "ground_truth": "00",
+      "model_prediction": "01",
+      "model_response": "01: Dangerous: Hazard detected but no anomalies",
+      "timestamp": "2026-01-06T09:52:41.909801",
+      "match": false
+    },
+    {
+      "image_name": "2252.png",
+      "image_id": "sNDMHmAoz2DUiqXh91J1",
+      "ground_truth": "00",
+      "model_prediction": "11",
+      "model_response": "11: Anomalous Dangerous: Both anomaly and hazard detected",
+      "timestamp": "2026-01-06T09:52:43.012341",
+      "match": false
+    },
+    {
+      "image_name": "DSCF7732.jpg",
+      "image_id": "BXhJPKfnT1CUr6vACoxa",
+      "ground_truth": "10",
+      "model_prediction": "00",
+      "model_response": "00: Safe: No anomalies or hazards detected",
+      "timestamp": "2026-01-06T09:52:44.334902",
+      "match": false
+    },
+    {
+      "image_name": "DSCF7738.jpg",
+      "image_id": "yLqVRzLjWhFCodoYUbU9",
+      "ground_truth": "10",
+      "model_prediction": "01",
+      "model_response": "01: Dangerous: Hazard detected but no anomalies",
+      "timestamp": "2026-01-06T09:52:45.737859",
+      "match": false
+    },
+    {
+      "image_name": "IMG_1139.jpeg",
+      "image_id": "FPCJv8cq7BdqCHoi7QSn",
+      "ground_truth": "11",
+      "model_prediction": "00",
+      "model_response": "00: Safe: No anomalies or hazards detected",
+      "timestamp": "2026-01-06T09:52:46.628930",
+      "match": false
+    },
+    {
+      "image_name": "48405385507_34357ae814_z.jpg",
+      "image_id": "CHl2oSfh74sEwqLFwKcy",
+      "ground_truth": "11",
+      "model_prediction": "00",
+      "model_response": "00: Safe: No anomalies or hazards detected",
+      "timestamp": "2026-01-06T09:52:47.508121",
+      "match": false
+    },
+    {
+      "image_name": "Screenshot 2025-03-20 112705.png",
+      "image_id": "dtmfZEj6AkbpkNniW7np",
+      "ground_truth": "11",
+      "model_prediction": "00",
+      "model_response": "00: Safe: No anomalies or hazards detected",
+      "timestamp": "2026-01-06T09:52:48.629477",
+      "match": false
+    },
+    {
+      "image_name": "12 Pallet Flammable Liquids Store.jpg",
+      "image_id": "G2uSJcYQ915PZrSxKGVV",
+      "ground_truth": "00",
+      "model_prediction": "01",
+      "model_response": "01: Dangerous: Hazard detected but no anomalies",
+      "timestamp": "2026-01-06T09:52:49.825337",
+      "match": false
+    },
+    {
+      "image_name": "688.jpg",
+      "image_id": "bBXbS3LYNKgc4qZK1QLY",
+      "ground_truth": "01",
+      "model_prediction": "10",
+      "model_response": "10: Anomalous: Anomaly detected but no hazards",
+      "timestamp": "2026-01-06T09:52:50.668679",
+      "match": false
+    },
+    {
+      "image_name": "Screenshot 2025-03-20 112403.png",
+      "image_id": "jKo8kGKzhQmhNcsGKIps",
+      "ground_truth": "11",
+      "model_prediction": "10",
+      "model_response": "10: Anomalous: Anomaly detected but no hazards",
+      "timestamp": "2026-01-06T09:52:51.605507",
+      "match": false
+    },
+    {
+      "image_name": "v_15_00275.jpg",
+      "image_id": "5LZGjie6NJloBV4b1acT",
+      "ground_truth": "00",
+      "model_prediction": "00",
+      "model_response": "00: Safe: No anomalies or hazards detected",
+      "timestamp": "2026-01-06T09:52:52.505886",
+      "match": true
+    },
+    {
+      "image_name": "large-used-2009-international-durastar-4300_jpg",
+      "image_id": "MdCu9Rp3mqqn1UTbEJH8",
+      "ground_truth": "00",
+      "model_prediction": "11",
+      "model_response": "11: Anomalous Dangerous: Both anomaly and hazard detected",
+      "timestamp": "2026-01-06T09:52:53.364289",
+      "match": false
+    },
+    {
+      "image_name": "Palletized-Drum-Storage-A9-1.jpg",
+      "image_id": "to4SYmlaNJLu3C0roN1x",
+      "ground_truth": "00",
+      "model_prediction": "00",
+      "model_response": "00: Safe: No anomalies or hazards detected",
+      "timestamp": "2026-01-06T09:52:54.461169",
+      "match": true
+    },
+    {
+      "image_name": "IMG_20220625_130557938.jpg",
+      "image_id": "wYCa0FHbxggeTjvJTUQ1",
+      "ground_truth": "10",
+      "model_prediction": "10",
+      "model_response": "10: Anomalous: Anomaly detected but no hazards",
+      "timestamp": "2026-01-06T09:52:55.436115",
+      "match": true
+    },
+    {
+      "image_name": "Screenshot 2025-03-20 112843.png",
+      "image_id": "LFe24FZbx6W1hkdeD1rn",
+      "ground_truth": "11",
+      "model_prediction": "11",
+      "model_response": "11: Anomalous Dangerous: Both anomaly and hazard detected",
+      "timestamp": "2026-01-06T09:52:56.361700",
+      "match": true
+    },
+    {
+      "image_name": "Fotolia_62245720_S.jpg",
+      "image_id": "pCcDNcxFxTaYuJmhcVFr",
+      "ground_truth": "01",
+      "model_prediction": "00",
+      "model_response": "00: Safe: No anomalies or hazards detected",
+      "timestamp": "2026-01-06T09:52:57.498485",
+      "match": false
+    },
+    {
+      "image_name": "Gemini_Generated_Image_kq7ychkq7ychkq7y.png",
+      "image_id": "aXmuYb4kgxHF5sW7sZWO",
+      "ground_truth": "11",
+      "model_prediction": "01",
+      "model_response": "01: Dangerous: Hazard detected but no anomalies",
+      "timestamp": "2026-01-06T09:52:58.527751",
+      "match": false
+    },
+    {
+      "image_name": "images454_jpg",
+      "image_id": "EG7qBr1JeLqKDWg8Hizm",
+      "ground_truth": "01",
+      "model_prediction": "11",
+      "model_response": "11: Anomalous Dangerous: Both anomaly and hazard detected",
+      "timestamp": "2026-01-06T09:52:59.361061",
+      "match": false
+    },
+    {
+      "image_name": "tanker_0-9256137609481812_png",
+      "image_id": "u6ss014KyQbWudc2pLbl",
+      "ground_truth": "00",
+      "model_prediction": "10",
+      "model_response": "10: Anomalous: Anomaly detected but no hazards",
+      "timestamp": "2026-01-06T09:53:00.297050",
+      "match": false
+    },
+    {
+      "image_name": "360_F_53919936_ql5s587L1hCgdmSqCNKl5AMvArJOOkf5.jpg",
+      "image_id": "Gu7qMRewoqKwfpKEO7Wh",
+      "ground_truth": "00",
+      "model_prediction": "10",
+      "model_response": "10: Anomalous: Anomaly detected but no hazards",
+      "timestamp": "2026-01-06T09:53:01.137559",
+      "match": false
+    },
+    {
+      "image_name": "Screenshot 2025-03-20 at 11.28.47\u202fAM.png",
+      "image_id": "XVS7sFHFbTZlWI3HuHNo",
+      "ground_truth": "11",
+      "model_prediction": "10",
+      "model_response": "10: Anomalous: Anomaly detected but no hazards",
+      "timestamp": "2026-01-06T09:53:02.217637",
+      "match": false
+    },
+    {
+      "image_name": "chemical-spill-in-water_1024x1024.webp",
+      "image_id": "rXqkcGeb1onn8NVOuje7",
+      "ground_truth": "11",
+      "model_prediction": "01",
+      "model_response": "01: Dangerous: Hazard detected but no anomalies",
+      "timestamp": "2026-01-06T09:53:03.069623",
+      "match": false
+    },
+    {
+      "image_name": "Gemini_Generated_Image_2qoaiv2qoaiv2qoa.png",
+      "image_id": "NPy0SvXp9BkPN0oBhKkR",
+      "ground_truth": "00",
+      "model_prediction": "10",
+      "model_response": "10: Anomalous: Anomaly detected but no hazards",
+      "timestamp": "2026-01-06T09:53:04.012925",
+      "match": false
+    },
+    {
+      "image_name": "images (3).jpg",
+      "image_id": "6Btm9WKFbQLHiqgJlbnD",
+      "ground_truth": "11",
+      "model_prediction": "10",
+      "model_response": "10: Anomalous: Anomaly detected but no hazards",
+      "timestamp": "2026-01-06T09:53:04.858327",
+      "match": false
+    },
+    {
+      "image_name": "Screenshot 2025-03-20 113455.png",
+      "image_id": "Ol76ZUExggTcsvzGnNwA",
+      "ground_truth": "11",
+      "model_prediction": "10",
+      "model_response": "10: Anomalous: Anomaly detected but no hazards",
+      "timestamp": "2026-01-06T09:53:06.127254",
+      "match": false
+    },
+    {
+      "image_name": "Screenshot 2025-03-20 113141.png",
+      "image_id": "PXpSGFXLm6hzNq0Av1qj",
+      "ground_truth": "11",
+      "model_prediction": "10",
+      "model_response": "10: Anomalous: Anomaly detected but no hazards",
+      "timestamp": "2026-01-06T09:53:07.021131",
+      "match": false
+    },
+    {
+      "image_name": "img11.JPG",
+      "image_id": "QVAPhIZGhepWMoElcQHV",
+      "ground_truth": "00",
+      "model_prediction": "01",
+      "model_response": "01: Dangerous: Hazard detected but no anomalies",
+      "timestamp": "2026-01-06T09:53:07.833362",
+      "match": false
+    },
+    {
+      "image_name": "Screenshot 2025-03-20 112432.png",
+      "image_id": "QGeDHBbSHi0IKq1tSpJu",
+      "ground_truth": "10",
+      "model_prediction": "10",
+      "model_response": "10: Anomalous: Anomaly detected but no hazards",
+      "timestamp": "2026-01-06T09:53:08.693065",
+      "match": true
+    },
+    {
+      "image_name": "Gemini_Generated_Image_tdq64wtdq64wtdq6.png",
+      "image_id": "KXb34GtxUI4YjsZxoNid",
+      "ground_truth": "10",
+      "model_prediction": "10",
+      "model_response": "10: Anomalous: Anomaly detected but no hazards",
+      "timestamp": "2026-01-06T09:53:09.836356",
+      "match": true
+    },
+    {
+      "image_name": "Screenshot 2025-03-20 112001.png",
+      "image_id": "UH55gMz5QZ1oFlJ6PyoG",
+      "ground_truth": "11",
+      "model_prediction": "00",
+      "model_response": "00: Safe: No anomalies or hazards detected",
+      "timestamp": "2026-01-06T09:53:10.879094",
+      "match": false
+    }
+  ],
   "errors": [],
   "summary": {
-    "total_images": 0,
-    "successful": 0,
+    "total_images": 50,
+    "successful": 50,
     "failed": 0,
-    "accuracy": 0.0,
-    "precision": 0.0,
-    "recall": 0.0,
-    "f1_score": 0.0,
-    "confusion_matrix_file": null
+    "accuracy": 0.16,
+    "precision": 0.1635,
+    "recall": 0.2037,
+    "f1_score": 0.1814,
+    "confusion_matrix_file": "classification_results_confusion_matrix.png"
   }
 }

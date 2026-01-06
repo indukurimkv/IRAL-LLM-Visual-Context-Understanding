@@ -13,6 +13,7 @@ import sys
 
 from dotenv import load_dotenv
 
+from mock_openrouter_client import MockOpenRouterClient
 from openrouter_client import OpenRouterClient
 from processor import ClassificationProcessor
 from roboflow_client import RoboflowAPIClient
@@ -64,6 +65,17 @@ def main():
         default=None,
         help="Output path for confusion matrix image (default: <output_file>_confusion_matrix.png)"
     )
+    parser.add_argument(
+        "--mock-mode",
+        action="store_true",
+        help="Enable mock mode: simulate OpenRouter API responses without making actual API calls (saves credits)"
+    )
+    parser.add_argument(
+        "--mock-seed",
+        type=int,
+        default=None,
+        help="Random seed for mock mode (for reproducible results). Only used when --mock-mode is enabled"
+    )
     
     # Parse command-line arguments
     args = parser.parse_args()
@@ -73,8 +85,9 @@ def main():
         print("Error: Roboflow API key is required. Set ROBOFLOW_API_KEY in .env file or use --roboflow-api-key")
         sys.exit(1)
     
-    if not args.openrouter_api_key:
-        print("Error: OpenRouter API key is required. Set OPENROUTER_API_KEY in .env file or use --openrouter-api-key")
+    # OpenRouter API key is only required when not in mock mode
+    if not args.mock_mode and not args.openrouter_api_key:
+        print("Error: OpenRouter API key is required when not in mock mode. Set OPENROUTER_API_KEY in .env file or use --openrouter-api-key")
         sys.exit(1)
     
     # Validate that workspace and project IDs are provided
@@ -94,7 +107,14 @@ def main():
         args.project_id
     )
     
-    openrouter_client = OpenRouterClient(args.openrouter_api_key, args.model)
+    # Use mock client if mock mode is enabled, otherwise use real client
+    if args.mock_mode:
+        print("MOCK MODE ENABLED: Simulating OpenRouter API responses (no API calls will be made)")
+        if args.mock_seed is not None:
+            print(f"Using random seed: {args.mock_seed} (results will be reproducible)")
+        openrouter_client = MockOpenRouterClient(seed=args.mock_seed)
+    else:
+        openrouter_client = OpenRouterClient(args.openrouter_api_key, args.model)
     
     # Create main processor that orchestrates the workflow
     processor = ClassificationProcessor(roboflow_client, openrouter_client)
