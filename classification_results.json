@@ -6,7 +6,7 @@
       "ground_truth": "00",
       "model_prediction": "00",
       "model_response": "00",
-      "timestamp": "2026-01-05T23:30:24.875789",
+      "timestamp": "2026-01-06T09:30:34.352639",
       "match": true
     },
     {
@@ -15,7 +15,7 @@
       "ground_truth": "00",
       "model_prediction": "00",
       "model_response": "00",
-      "timestamp": "2026-01-05T23:30:28.064183",
+      "timestamp": "2026-01-06T09:30:38.652898",
       "match": true
     },
     {
@@ -24,17 +24,17 @@
       "ground_truth": "00",
       "model_prediction": "00",
       "model_response": "00",
-      "timestamp": "2026-01-05T23:30:32.992874",
+      "timestamp": "2026-01-06T09:30:41.876082",
       "match": true
     },
     {
       "image_name": "0000334_01569_d_0000029.jpg",
       "image_id": "SifG7P9TyvQP4dbMsL6C",
       "ground_truth": "00",
-      "model_prediction": "00",
-      "model_response": "00",
-      "timestamp": "2026-01-05T23:30:36.550688",
-      "match": true
+      "model_prediction": "11",
+      "model_response": "11",
+      "timestamp": "2026-01-06T09:30:44.948811",
+      "match": false
     },
     {
       "image_name": "9999999_00719_d_0000327.jpg",
@@ -42,17 +42,17 @@
       "ground_truth": "00",
       "model_prediction": "00",
       "model_response": "00",
-      "timestamp": "2026-01-05T23:30:43.254863",
+      "timestamp": "2026-01-06T09:30:48.468604",
       "match": true
     },
     {
       "image_name": "9999969_00000_d_0000037.jpg",
       "image_id": "R2LYctMICBL2nOZCgzTk",
       "ground_truth": "11",
-      "model_prediction": "11",
-      "model_response": "11",
-      "timestamp": "2026-01-05T23:30:46.591178",
-      "match": true
+      "model_prediction": "01",
+      "model_response": "01",
+      "timestamp": "2026-01-06T09:30:51.700559",
+      "match": false
     },
     {
       "image_name": "9999955_00000_d_0000249.jpg",
@@ -60,7 +60,7 @@
       "ground_truth": "00",
       "model_prediction": "00",
       "model_response": "00",
-      "timestamp": "2026-01-05T23:30:50.669391",
+      "timestamp": "2026-01-06T09:30:54.700497",
       "match": true
     },
     {
@@ -69,7 +69,7 @@
       "ground_truth": "00",
       "model_prediction": "00",
       "model_response": "00",
-      "timestamp": "2026-01-05T23:30:53.761688",
+      "timestamp": "2026-01-06T09:30:57.898151",
       "match": true
     },
     {
@@ -78,17 +78,17 @@
       "ground_truth": "00",
       "model_prediction": "00",
       "model_response": "00",
-      "timestamp": "2026-01-05T23:30:57.439197",
+      "timestamp": "2026-01-06T09:31:01.326246",
       "match": true
     },
     {
       "image_name": "2323.png",
       "image_id": "xkVpJNGnOSGgu1jN9izM",
       "ground_truth": "00",
-      "model_prediction": "00",
-      "model_response": "00",
-      "timestamp": "2026-01-05T23:31:02.238272",
-      "match": true
+      "model_prediction": "10",
+      "model_response": "10",
+      "timestamp": "2026-01-06T09:31:04.911270",
+      "match": false
     },
     {
       "image_name": "2298.png",
@@ -96,17 +96,17 @@
       "ground_truth": "00",
       "model_prediction": "00",
       "model_response": "00",
-      "timestamp": "2026-01-05T23:31:08.800953",
+      "timestamp": "2026-01-06T09:31:08.771854",
       "match": true
     },
     {
       "image_name": "2264.png",
       "image_id": "1TrnNJfWdQvhFuPYjH45",
       "ground_truth": "00",
-      "model_prediction": "00",
-      "model_response": "00",
-      "timestamp": "2026-01-05T23:31:12.906930",
-      "match": true
+      "model_prediction": "10",
+      "model_response": "10",
+      "timestamp": "2026-01-06T09:31:11.986799",
+      "match": false
     },
     {
       "image_name": "9999984_00000_d_0000106.jpg",
@@ -114,7 +114,7 @@
       "ground_truth": "00",
       "model_prediction": "00",
       "model_response": "00",
-      "timestamp": "2026-01-05T23:31:16.419229",
+      "timestamp": "2026-01-06T09:31:15.290365",
       "match": true
     },
     {
@@ -123,17 +123,17 @@
       "ground_truth": "00",
       "model_prediction": "00",
       "model_response": "00",
-      "timestamp": "2026-01-05T23:31:19.976570",
+      "timestamp": "2026-01-06T09:31:18.538589",
       "match": true
     },
     {
       "image_name": "Gemini_Generated_Image_msemnqmsemnqmsem.png",
       "image_id": "BsMZgHtCAMdxWX6tSCpG",
       "ground_truth": "00",
-      "model_prediction": "00",
-      "model_response": "00",
-      "timestamp": "2026-01-05T23:31:26.063682",
-      "match": true
+      "model_prediction": "10",
+      "model_response": "10",
+      "timestamp": "2026-01-06T09:31:23.569587",
+      "match": false
     },
     {
       "image_name": "9999955_00000_d_0000177.jpg",
@@ -141,7 +141,7 @@
       "ground_truth": "00",
       "model_prediction": "00",
       "model_response": "00",
-      "timestamp": "2026-01-05T23:31:29.451804",
+      "timestamp": "2026-01-06T09:31:27.585325",
       "match": true
     },
     {
@@ -150,7 +150,7 @@
       "ground_truth": "00",
       "model_prediction": "00",
       "model_response": "00",
-      "timestamp": "2026-01-05T23:31:33.062534",
+      "timestamp": "2026-01-06T09:31:30.820543",
       "match": true
     },
     {
@@ -159,7 +159,7 @@
       "ground_truth": "00",
       "model_prediction": "00",
       "model_response": "00",
-      "timestamp": "2026-01-05T23:31:36.772784",
+      "timestamp": "2026-01-06T09:31:34.600470",
       "match": true
     },
     {
@@ -168,7 +168,7 @@
       "ground_truth": "00",
       "model_prediction": "00",
       "model_response": "00",
-      "timestamp": "2026-01-05T23:31:39.906975",
+      "timestamp": "2026-01-06T09:31:38.032034",
       "match": true
     },
     {
@@ -177,7 +177,7 @@
       "ground_truth": "00",
       "model_prediction": "00",
       "model_response": "00",
-      "timestamp": "2026-01-05T23:31:43.720977",
+      "timestamp": "2026-01-06T09:31:41.356974",
       "match": true
     },
     {
@@ -186,7 +186,7 @@
       "ground_truth": "00",
       "model_prediction": "00",
       "model_response": "00",
-      "timestamp": "2026-01-05T23:31:47.983164",
+      "timestamp": "2026-01-06T09:31:45.027697",
       "match": true
     },
     {
@@ -195,7 +195,7 @@
       "ground_truth": "00",
       "model_prediction": "00",
       "model_response": "00",
-      "timestamp": "2026-01-05T23:31:51.787854",
+      "timestamp": "2026-01-06T09:31:48.659621",
       "match": true
     },
     {
@@ -204,7 +204,7 @@
       "ground_truth": "10",
       "model_prediction": null,
       "model_response": "'NoneType' object is not subscriptable",
-      "timestamp": "2026-01-05T23:32:13.135218",
+      "timestamp": "2026-01-06T09:32:10.652065",
       "match": false
     },
     {
@@ -213,7 +213,7 @@
       "ground_truth": "10",
       "model_prediction": null,
       "model_response": "'NoneType' object is not subscriptable",
-      "timestamp": "2026-01-05T23:32:41.632436",
+      "timestamp": "2026-01-06T09:32:29.920957",
       "match": false
     },
     {
@@ -222,7 +222,7 @@
       "ground_truth": "11",
       "model_prediction": "11",
       "model_response": "11",
-      "timestamp": "2026-01-05T23:32:44.656980",
+      "timestamp": "2026-01-06T09:32:33.333610",
       "match": true
     },
     {
@@ -231,7 +231,7 @@
       "ground_truth": "11",
       "model_prediction": "11",
       "model_response": "11",
-      "timestamp": "2026-01-05T23:32:47.143169",
+      "timestamp": "2026-01-06T09:32:36.415548",
       "match": true
     },
     {
@@ -240,7 +240,7 @@
       "ground_truth": "11",
       "model_prediction": "11",
       "model_response": "11",
-      "timestamp": "2026-01-05T23:32:50.464289",
+      "timestamp": "2026-01-06T09:32:39.707154",
       "match": true
     },
     {
@@ -249,7 +249,7 @@
       "ground_truth": "00",
       "model_prediction": "01",
       "model_response": "01",
-      "timestamp": "2026-01-05T23:32:55.074634",
+      "timestamp": "2026-01-06T09:32:46.155717",
       "match": false
     },
     {
@@ -258,7 +258,7 @@
       "ground_truth": "01",
       "model_prediction": "11",
       "model_response": "11",
-      "timestamp": "2026-01-05T23:32:58.130295",
+      "timestamp": "2026-01-06T09:32:48.851991",
       "match": false
     },
     {
@@ -267,17 +267,17 @@
       "ground_truth": "11",
       "model_prediction": "11",
       "model_response": "11",
-      "timestamp": "2026-01-05T23:33:00.874655",
+      "timestamp": "2026-01-06T09:32:52.912789",
       "match": true
     },
     {
       "image_name": "v_15_00275.jpg",
       "image_id": "5LZGjie6NJloBV4b1acT",
       "ground_truth": "00",
-      "model_prediction": "10",
-      "model_response": "10",
-      "timestamp": "2026-01-05T23:33:04.855813",
-      "match": false
+      "model_prediction": "00",
+      "model_response": "00",
+      "timestamp": "2026-01-06T09:32:56.455595",
+      "match": true
     },
     {
       "image_name": "large-used-2009-international-durastar-4300_jpg",
@@ -285,7 +285,7 @@
       "ground_truth": "00",
       "model_prediction": "00",
       "model_response": "00",
-      "timestamp": "2026-01-05T23:33:08.071989",
+      "timestamp": "2026-01-06T09:33:00.039550",
       "match": true
     },
     {
@@ -294,17 +294,17 @@
       "ground_truth": "00",
       "model_prediction": "00",
       "model_response": "00",
-      "timestamp": "2026-01-05T23:33:12.032756",
+      "timestamp": "2026-01-06T09:33:04.238951",
       "match": true
     },
     {
       "image_name": "IMG_20220625_130557938.jpg",
       "image_id": "wYCa0FHbxggeTjvJTUQ1",
       "ground_truth": "10",
-      "model_prediction": "10",
-      "model_response": "10",
-      "timestamp": "2026-01-05T23:33:14.981369",
-      "match": true
+      "model_prediction": "11",
+      "model_response": "11",
+      "timestamp": "2026-01-06T09:33:07.271311",
+      "match": false
     },
     {
       "image_name": "Screenshot 2025-03-20 112843.png",
@@ -312,143 +312,143 @@
       "ground_truth": "11",
       "model_prediction": "11",
       "model_response": "11",
-      "timestamp": "2026-01-05T23:33:18.355869",
+      "timestamp": "2026-01-06T09:33:10.550162",
       "match": true
     },
     {
       "image_name": "Fotolia_62245720_S.jpg",
       "image_id": "pCcDNcxFxTaYuJmhcVFr",
       "ground_truth": "01",
-      "model_prediction": null,
-      "model_response": "Error code: 402 - {'error': {'message': 'Insufficient credits. This account never purchased credits. Make sure your key is on the correct account or org, and if so, purchase more at https://openrouter.ai/settings/credits', 'code': 402}}",
-      "timestamp": "2026-01-05T23:33:19.520384",
+      "model_prediction": "11",
+      "model_response": "11",
+      "timestamp": "2026-01-06T09:33:13.360235",
       "match": false
     },
     {
       "image_name": "Gemini_Generated_Image_kq7ychkq7ychkq7y.png",
       "image_id": "aXmuYb4kgxHF5sW7sZWO",
       "ground_truth": "11",
-      "model_prediction": null,
-      "model_response": "Error code: 402 - {'error': {'message': 'Insufficient credits. This account never purchased credits. Make sure your key is on the correct account or org, and if so, purchase more at https://openrouter.ai/settings/credits', 'code': 402}}",
-      "timestamp": "2026-01-05T23:33:21.213835",
-      "match": false
+      "model_prediction": "11",
+      "model_response": "11",
+      "timestamp": "2026-01-06T09:33:18.031849",
+      "match": true
     },
     {
       "image_name": "images454_jpg",
       "image_id": "EG7qBr1JeLqKDWg8Hizm",
       "ground_truth": "01",
-      "model_prediction": null,
-      "model_response": "Error code: 402 - {'error': {'message': 'Insufficient credits. This account never purchased credits. Make sure your key is on the correct account or org, and if so, purchase more at https://openrouter.ai/settings/credits', 'code': 402}}",
-      "timestamp": "2026-01-05T23:33:22.339575",
-      "match": false
+      "model_prediction": "01",
+      "model_response": "01",
+      "timestamp": "2026-01-06T09:33:21.597650",
+      "match": true
     },
     {
       "image_name": "tanker_0-9256137609481812_png",
       "image_id": "u6ss014KyQbWudc2pLbl",
       "ground_truth": "00",
-      "model_prediction": null,
-      "model_response": "Error code: 402 - {'error': {'message': 'Insufficient credits. This account never purchased credits. Make sure your key is on the correct account or org, and if so, purchase more at https://openrouter.ai/settings/credits', 'code': 402}}",
-      "timestamp": "2026-01-05T23:33:23.528221",
-      "match": false
+      "model_prediction": "00",
+      "model_response": "00",
+      "timestamp": "2026-01-06T09:33:24.897590",
+      "match": true
     },
     {
       "image_name": "360_F_53919936_ql5s587L1hCgdmSqCNKl5AMvArJOOkf5.jpg",
       "image_id": "Gu7qMRewoqKwfpKEO7Wh",
       "ground_truth": "00",
-      "model_prediction": null,
-      "model_response": "Error code: 402 - {'error': {'message': 'Insufficient credits. This account never purchased credits. Make sure your key is on the correct account or org, and if so, purchase more at https://openrouter.ai/settings/credits', 'code': 402}}",
-      "timestamp": "2026-01-05T23:33:24.690354",
-      "match": false
+      "model_prediction": "00",
+      "model_response": "00",
+      "timestamp": "2026-01-06T09:33:27.353332",
+      "match": true
     },
     {
       "image_name": "Screenshot 2025-03-20 at 11.28.47\u202fAM.png",
       "image_id": "XVS7sFHFbTZlWI3HuHNo",
       "ground_truth": "11",
-      "model_prediction": null,
-      "model_response": "Error code: 402 - {'error': {'message': 'Insufficient credits. This account never purchased credits. Make sure your key is on the correct account or org, and if so, purchase more at https://openrouter.ai/settings/credits', 'code': 402}}",
-      "timestamp": "2026-01-05T23:33:26.502493",
-      "match": false
+      "model_prediction": "11",
+      "model_response": "11",
+      "timestamp": "2026-01-06T09:33:31.598131",
+      "match": true
     },
     {
       "image_name": "chemical-spill-in-water_1024x1024.webp",
       "image_id": "rXqkcGeb1onn8NVOuje7",
       "ground_truth": "11",
-      "model_prediction": null,
-      "model_response": "Error code: 402 - {'error': {'message': 'Insufficient credits. This account never purchased credits. Make sure your key is on the correct account or org, and if so, purchase more at https://openrouter.ai/settings/credits', 'code': 402}}",
-      "timestamp": "2026-01-05T23:33:27.863482",
-      "match": false
+      "model_prediction": "11",
+      "model_response": "11",
+      "timestamp": "2026-01-06T09:33:34.682544",
+      "match": true
     },
     {
       "image_name": "Gemini_Generated_Image_2qoaiv2qoaiv2qoa.png",
       "image_id": "NPy0SvXp9BkPN0oBhKkR",
       "ground_truth": "00",
-      "model_prediction": null,
-      "model_response": "Error code: 402 - {'error': {'message': 'Insufficient credits. This account never purchased credits. Make sure your key is on the correct account or org, and if so, purchase more at https://openrouter.ai/settings/credits', 'code': 402}}",
-      "timestamp": "2026-01-05T23:33:29.301584",
-      "match": false
+      "model_prediction": "00",
+      "model_response": "00",
+      "timestamp": "2026-01-06T09:33:39.133892",
+      "match": true
     },
     {
       "image_name": "images (3).jpg",
       "image_id": "6Btm9WKFbQLHiqgJlbnD",
       "ground_truth": "11",
-      "model_prediction": null,
-      "model_response": "Error code: 402 - {'error': {'message': 'Insufficient credits. This account never purchased credits. Make sure your key is on the correct account or org, and if so, purchase more at https://openrouter.ai/settings/credits', 'code': 402}}",
-      "timestamp": "2026-01-05T23:33:30.296170",
+      "model_prediction": "10",
+      "model_response": "10",
+      "timestamp": "2026-01-06T09:33:41.253000",
       "match": false
     },
     {
       "image_name": "Screenshot 2025-03-20 113455.png",
       "image_id": "Ol76ZUExggTcsvzGnNwA",
       "ground_truth": "11",
-      "model_prediction": null,
-      "model_response": "Error code: 402 - {'error': {'message': 'Insufficient credits. This account never purchased credits. Make sure your key is on the correct account or org, and if so, purchase more at https://openrouter.ai/settings/credits', 'code': 402}}",
-      "timestamp": "2026-01-05T23:33:31.479862",
-      "match": false
+      "model_prediction": "11",
+      "model_response": "11",
+      "timestamp": "2026-01-06T09:33:46.488284",
+      "match": true
     },
     {
       "image_name": "Screenshot 2025-03-20 113141.png",
       "image_id": "PXpSGFXLm6hzNq0Av1qj",
       "ground_truth": "11",
-      "model_prediction": null,
-      "model_response": "Error code: 402 - {'error': {'message': 'Insufficient credits. This account never purchased credits. Make sure your key is on the correct account or org, and if so, purchase more at https://openrouter.ai/settings/credits', 'code': 402}}",
-      "timestamp": "2026-01-05T23:33:32.806823",
-      "match": false
+      "model_prediction": "11",
+      "model_response": "11",
+      "timestamp": "2026-01-06T09:33:49.772449",
+      "match": true
     },
     {
       "image_name": "img11.JPG",
       "image_id": "QVAPhIZGhepWMoElcQHV",
       "ground_truth": "00",
-      "model_prediction": null,
-      "model_response": "Error code: 402 - {'error': {'message': 'Insufficient credits. This account never purchased credits. Make sure your key is on the correct account or org, and if so, purchase more at https://openrouter.ai/settings/credits', 'code': 402}}",
-      "timestamp": "2026-01-05T23:33:33.898885",
-      "match": false
+      "model_prediction": "00",
+      "model_response": "00",
+      "timestamp": "2026-01-06T09:33:52.159166",
+      "match": true
     },
     {
       "image_name": "Screenshot 2025-03-20 112432.png",
       "image_id": "QGeDHBbSHi0IKq1tSpJu",
       "ground_truth": "10",
-      "model_prediction": null,
-      "model_response": "Error code: 402 - {'error': {'message': 'Insufficient credits. This account never purchased credits. Make sure your key is on the correct account or org, and if so, purchase more at https://openrouter.ai/settings/credits', 'code': 402}}",
-      "timestamp": "2026-01-05T23:33:34.977963",
+      "model_prediction": "11",
+      "model_response": "11",
+      "timestamp": "2026-01-06T09:33:55.392824",
       "match": false
     },
     {
       "image_name": "Gemini_Generated_Image_tdq64wtdq64wtdq6.png",
       "image_id": "KXb34GtxUI4YjsZxoNid",
       "ground_truth": "10",
-      "model_prediction": null,
-      "model_response": "Error code: 402 - {'error': {'message': 'Insufficient credits. This account never purchased credits. Make sure your key is on the correct account or org, and if so, purchase more at https://openrouter.ai/settings/credits', 'code': 402}}",
-      "timestamp": "2026-01-05T23:33:36.507149",
+      "model_prediction": "00",
+      "model_response": "00",
+      "timestamp": "2026-01-06T09:33:59.355801",
       "match": false
     },
     {
       "image_name": "Screenshot 2025-03-20 112001.png",
       "image_id": "UH55gMz5QZ1oFlJ6PyoG",
       "ground_truth": "11",
-      "model_prediction": null,
-      "model_response": "Error code: 402 - {'error': {'message': 'Insufficient credits. This account never purchased credits. Make sure your key is on the correct account or org, and if so, purchase more at https://openrouter.ai/settings/credits', 'code': 402}}",
-      "timestamp": "2026-01-05T23:33:38.016577",
-      "match": false
+      "model_prediction": "11",
+      "model_response": "11",
+      "timestamp": "2026-01-06T09:34:03.285683",
+      "match": true
     }
   ],
   "errors": [],
@@ -456,6 +456,10 @@
     "total_images": 50,
     "successful": 50,
     "failed": 0,
-    "accuracy": 0.6
+    "accuracy": 0.72,
+    "precision": 0.4952,
+    "recall": 0.5018,
+    "f1_score": 0.4985,
+    "confusion_matrix_file": "classification_results_confusion_matrix.png"
   }
 }

@@ -21,6 +21,9 @@ import requests
 from openai import OpenAI
 from PIL import Image
 from dotenv import load_dotenv
+import numpy as np
+import matplotlib.pyplot as plt
+from sklearn.metrics import confusion_matrix
 
 # Load environment variables from .env file
 load_dotenv()
@@ -57,10 +60,10 @@ class RoboflowAPIClient:
                 payload = {
                     "in_dataset": True
                 }
-                # Add pagination query parameters if not first page
-                paginated_url = search_url
+                # Always include limit parameter, add offset for subsequent pages
+                paginated_url = f"{search_url}&limit={limit}"
                 if offset > 0:
-                    paginated_url = f"{search_url}&offset={offset}&limit={limit}"
+                    paginated_url += f"&offset={offset}"
                 
                 response = requests.post(
                     paginated_url, 
@@ -376,7 +379,146 @@ class ClassificationProcessor:
             # Rate limiting - small delay between requests to avoid API throttling
             time.sleep(0.5)
     
-    def save_results(self, output_file: str):
+    def calculate_metrics(self) -> Dict[str, float]:
+        """
+        Calculate precision, recall, and F1 score using standard formulas.
+        
+        Uses macro-averaging: calculates precision/recall per class, then averages.
+        Filters out results where model_prediction is None.
+        
+        Returns:
+            Dictionary with 'precision', 'recall', and 'f1_score' keys
+        """
+        # Filter out results with null predictions
+        valid_results = [r for r in self.results if r.get("model_prediction") is not None]
+        
+        if not valid_results:
+            return {
+                "precision": 0.0,
+                "recall": 0.0,
+                "f1_score": 0.0
+            }
+        
+        # Get all unique classes
+        all_classes = set()
+        for r in valid_results:
+            all_classes.add(r.get("ground_truth"))
+            all_classes.add(r.get("model_prediction"))
+        all_classes = sorted(list(all_classes))
+        
+        # Calculate precision and recall per class
+        precisions = []
+        recalls = []
+        
+        for cls in all_classes:
+            # True Positives: predicted as cls and actually cls
+            tp = sum(1 for r in valid_results 
+                     if r.get("ground_truth") == cls and r.get("model_prediction") == cls)
+            
+            # False Positives: predicted as cls but actually not cls
+            fp = sum(1 for r in valid_results 
+                     if r.get("ground_truth") != cls and r.get("model_prediction") == cls)
+            
+            # False Negatives: actually cls but predicted as something else
+            fn = sum(1 for r in valid_results 
+                     if r.get("ground_truth") == cls and r.get("model_prediction") != cls)
+            
+            # Calculate precision for this class
+            precision = tp / (tp + fp) if (tp + fp) > 0 else 0.0
+            precisions.append(precision)
+            
+            # Calculate recall for this class
+            recall = tp / (tp + fn) if (tp + fn) > 0 else 0.0
+            recalls.append(recall)
+        
+        # Macro-averaging: average across all classes
+        avg_precision = sum(precisions) / len(precisions) if precisions else 0.0
+        avg_recall = sum(recalls) / len(recalls) if recalls else 0.0
+        
+        # Calculate F1 score from averaged precision and recall
+        f1_score = 2 * (avg_precision * avg_recall) / (avg_precision + avg_recall) if (avg_precision + avg_recall) > 0 else 0.0
+        
+        return {
+            "precision": round(avg_precision, 4),
+            "recall": round(avg_recall, 4),
+            "f1_score": round(f1_score, 4)
+        }
+    
+    def generate_confusion_matrix(self, output_file: str) -> str:
+        """
+        Generate and save a confusion matrix visualization.
+        
+        Args:
+            output_file: Path to save the confusion matrix image (PNG format)
+        
+        Returns:
+            Path to the saved confusion matrix file
+        """
+        # Filter out results with null predictions
+        valid_results = [r for r in self.results if r.get("model_prediction") is not None]
+        
+        if not valid_results:
+            print("Warning: No valid predictions to generate confusion matrix")
+            return ""
+        
+        # Extract ground truth and predictions
+        ground_truth = [r.get("ground_truth") for r in valid_results]
+        predictions = [r.get("model_prediction") for r in valid_results]
+        
+        # Define all possible classes and their labels
+        class_codes = ["00", "01", "10", "11"]
+        class_labels = {
+            "00": "Neither",
+            "01": "Hazard",
+            "10": "Anomaly",
+            "11": "Both"
+        }
+        
+        # Create label lists for display
+        display_labels = [class_labels[code] for code in class_codes]
+        
+        # Generate confusion matrix using sklearn
+        cm = confusion_matrix(
+            ground_truth,
+            predictions,
+            labels=class_codes
+        )
+        
+        # Create the plot
+        fig, ax = plt.subplots(figsize=(10, 8))
+        im = ax.imshow(cm, interpolation='nearest', cmap=plt.cm.Blues)
+        ax.figure.colorbar(im, ax=ax)
+        
+        # Set labels
+        ax.set(xticks=np.arange(cm.shape[1]),
+               yticks=np.arange(cm.shape[0]),
+               xticklabels=display_labels,
+               yticklabels=display_labels,
+               title='Confusion Matrix',
+               ylabel='Ground Truth',
+               xlabel='Predicted')
+        
+        # Rotate the tick labels and set their alignment
+        plt.setp(ax.get_xticklabels(), rotation=45, ha="right", rotation_mode="anchor")
+        
+        # Add text annotations in each cell
+        thresh = cm.max() / 2.
+        for i in range(cm.shape[0]):
+            for j in range(cm.shape[1]):
+                ax.text(j, i, format(cm[i, j], 'd'),
+                       ha="center", va="center",
+                       color="white" if cm[i, j] > thresh else "black")
+        
+        fig.tight_layout()
+        
+        # Save the figure
+        plt.savefig(output_file, dpi=150, bbox_inches='tight')
+        plt.close()
+        
+        print(f"Confusion matrix saved to {output_file}")
+        return output_file
+    
+    def save_results(self, output_file: str, confusion_matrix_file: Optional[str] = None):
         """Save results to JSON file."""
         # Calculate statistics for summary
         total_images = len(self.results) + len(self.errors)
@@ -387,6 +529,17 @@ class ClassificationProcessor:
         matches = sum(1 for r in self.results if r.get("match", False))
         accuracy = matches / successful if successful > 0 else 0.0
         
+        # Calculate precision, recall, and F1 score
+        metrics = self.calculate_metrics()
+        
+        # Generate confusion matrix
+        if confusion_matrix_file is None:
+            # Default confusion matrix filename based on output file
+            base_name = os.path.splitext(output_file)[0]
+            confusion_matrix_file = f"{base_name}_confusion_matrix.png"
+        
+        confusion_matrix_path = self.generate_confusion_matrix(confusion_matrix_file)
+        
         # Structure output data with results, errors, and summary statistics
         output_data = {
             "results": self.results,  # All successful classifications
@@ -395,7 +548,11 @@ class ClassificationProcessor:
                 "total_images": total_images,
                 "successful": successful,
                 "failed": failed,
-                "accuracy": round(accuracy, 4)  # Rounded to 4 decimal places
+                "accuracy": round(accuracy, 4),  # Rounded to 4 decimal places
+                "precision": metrics["precision"],
+                "recall": metrics["recall"],
+                "f1_score": metrics["f1_score"],
+                "confusion_matrix_file": confusion_matrix_path if confusion_matrix_path else None
             }
         }
         
@@ -405,6 +562,7 @@ class ClassificationProcessor:
         
         print(f"\nResults saved to {output_file}")
         print(f"Summary: {successful} successful, {failed} failed, accuracy: {accuracy:.2%}")
+        print(f"Metrics: Precision={metrics['precision']:.4f}, Recall={metrics['recall']:.4f}, F1={metrics['f1_score']:.4f}")
 
 
 def main():
@@ -444,6 +602,11 @@ def main():
         "--model",
         default="anthropic/claude-3.5-sonnet",
         help="OpenRouter model to use (default: anthropic/claude-3.5-sonnet)"
+    )
+    parser.add_argument(
+        "--confusion-matrix-output",
+        default=None,
+        help="Output path for confusion matrix image (default: <output_file>_confusion_matrix.png)"
     )
     
     # Parse command-line arguments
@@ -492,7 +655,7 @@ def main():
         sys.exit(1)
     
     # Save all results and statistics to JSON file
-    processor.save_results(args.output)
+    processor.save_results(args.output, args.confusion_matrix_output)
 
 
 if __name__ == "__main__":

@@ -9,3 +9,12 @@ Pillow>=10.0.0
 
 # Environment variable management from .env files
 python-dotenv>=1.0.0
+
+# Numerical operations
+numpy>=1.24.0
+
+# Plotting library for confusion matrix
+matplotlib>=3.7.0
+
+# Machine learning metrics
+scikit-learn>=1.3.0
