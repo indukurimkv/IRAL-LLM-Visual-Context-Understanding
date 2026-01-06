@@ -102,7 +102,7 @@ class RoboflowAPIClient:
         # Construct URL for specific image tags endpoint with API key in query parameter
         image_url = f"{self.base_url}/images/{image_id}?api_key={self.api_key}"
         try:
-            # POST request to fetch detailed metadata including annotations
+            # Get request to fetch detailed metadata including annotations
             response = requests.get(
                 image_url, 
                 headers={"Content-Type": "application/json"}, 
