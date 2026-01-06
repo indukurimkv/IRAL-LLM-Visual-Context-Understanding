@@ -1,3 +1,11 @@
+# HTTP library for API requests
 requests>=2.31.0
+
+# OpenAI-compatible client for OpenRouter API
 openai>=1.0.0
+
+# Image processing library
 Pillow>=10.0.0
+
+# Environment variable management from .env files
+python-dotenv>=1.0.0

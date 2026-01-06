@@ -20,6 +20,10 @@ from io import BytesIO
 import requests
 from openai import OpenAI
 from PIL import Image
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
 
 
 class RoboflowAPIClient:
@@ -365,27 +369,27 @@ def main():
     parser = argparse.ArgumentParser(
         description="Classify Roboflow images using OpenRouter API"
     )
-    # Required arguments for Roboflow project identification
+    # Arguments for Roboflow project identification (can be from .env or CLI)
     parser.add_argument(
         "--workspace-id",
-        required=True,
-        help="Roboflow workspace ID"
+        default=os.getenv("ROBOFLOW_WORKSPACE_ID"),
+        help="Roboflow workspace ID (or set ROBOFLOW_WORKSPACE_ID in .env file)"
     )
     parser.add_argument(
         "--project-id",
-        required=True,
-        help="Roboflow project ID"
+        default=os.getenv("ROBOFLOW_PROJECT_ID"),
+        help="Roboflow project ID (or set ROBOFLOW_PROJECT_ID in .env file)"
     )
-    # API keys can be provided via CLI or environment variables
+    # API keys can be provided via CLI, .env file, or environment variables
     parser.add_argument(
         "--roboflow-api-key",
         default=os.getenv("ROBOFLOW_API_KEY"),
-        help="Roboflow API key (or set ROBOFLOW_API_KEY env var)"
+        help="Roboflow API key (or set ROBOFLOW_API_KEY in .env file)"
     )
     parser.add_argument(
         "--openrouter-api-key",
         default=os.getenv("OPENROUTER_API_KEY"),
-        help="OpenRouter API key (or set OPENROUTER_API_KEY env var)"
+        help="OpenRouter API key (or set OPENROUTER_API_KEY in .env file)"
     )
     # Optional arguments with defaults
     parser.add_argument(
@@ -402,13 +406,22 @@ def main():
     # Parse command-line arguments
     args = parser.parse_args()
     
-    # Validate that API keys are provided (either via CLI or env vars)
+    # Validate that API keys are provided (either via CLI, .env, or env vars)
     if not args.roboflow_api_key:
-        print("Error: Roboflow API key is required. Set ROBOFLOW_API_KEY env var or use --roboflow-api-key")
+        print("Error: Roboflow API key is required. Set ROBOFLOW_API_KEY in .env file or use --roboflow-api-key")
         sys.exit(1)
     
     if not args.openrouter_api_key:
-        print("Error: OpenRouter API key is required. Set OPENROUTER_API_KEY env var or use --openrouter-api-key")
+        print("Error: OpenRouter API key is required. Set OPENROUTER_API_KEY in .env file or use --openrouter-api-key")
+        sys.exit(1)
+    
+    # Validate that workspace and project IDs are provided
+    if not args.workspace_id:
+        print("Error: Roboflow workspace ID is required. Set ROBOFLOW_WORKSPACE_ID in .env file or use --workspace-id")
+        sys.exit(1)
+    
+    if not args.project_id:
+        print("Error: Roboflow project ID is required. Set ROBOFLOW_PROJECT_ID in .env file or use --project-id")
         sys.exit(1)
     
     # Initialize API clients with credentials
