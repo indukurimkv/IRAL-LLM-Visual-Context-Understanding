@@ -109,72 +109,87 @@ def main():
     # Parse models list (support comma-separated for backward compatibility)
     models = [m.strip() for m in args.model.split(',') if m.strip()]
 
-    # Preload all image metadata and image bytes from Roboflow once
-    print("Fetching images and downloading image data from Roboflow (once)...")
-    try:
-        images_list = roboflow_client.get_images_list()
-    except Exception as e:
-        print(f"Error fetching images list: {e}")
-        sys.exit(1)
-
-    preloaded = []
-    for idx, img_summary in enumerate(images_list, 1):
-        image_id = img_summary.get("id")
-        if not image_id:
-            print(f"Skipping image without ID: {img_summary}")
-            continue
-
-        try:
-            metadata = roboflow_client.get_image_metadata(image_id)
-            # Determine image URL similar to processor logic
-            image_url = None
-            if "urls" in metadata and "original" in metadata["urls"]:
-                image_url = metadata["urls"]["original"]
-            elif "url" in metadata:
-                image_url = metadata["url"]
-            else:
-                image_url = f"{roboflow_client.base_url}/images/{image_id}/download"
-
-            image_data = roboflow_client.download_image(image_url)
-            preloaded.append({"metadata": metadata, "image_data": image_data})
-        except KeyboardInterrupt:
-            print("\nInterrupted while preloading images. Exiting.")
-            sys.exit(1)
-        except Exception as e:
-            print(f"Warning: failed to preload image {image_id}: {e}")
-
-    print(f"Preloaded {len(preloaded)} images. Now running models: {models}")
-
-    # For each model, instantiate an OpenRouter client and process preloaded images
+    # Initialize processors for all models
+    processors = []
+    print(f"Initializing processors for models: {models}")
+    
     for model in models:
         model_safe = model.replace('/', '_')
-        print(f"\nRunning model: {model} -> output prefix: {model_safe}")
-
         if args.mock_mode:
-            print("MOCK MODE ENABLED: Simulating OpenRouter API responses (no API calls will be made)")
-            if args.mock_seed is not None:
-                print(f"Using random seed: {args.mock_seed} (results will be reproducible)")
             openrouter_client = MockOpenRouterClient(seed=args.mock_seed)
         else:
             openrouter_client = OpenRouterClient(args.openrouter_api_key, model)
-
+            
         processor = ClassificationProcessor(roboflow_client, openrouter_client)
+        processors.append({
+            "model": model,
+            "model_safe": model_safe,
+            "processor": processor,
+            "openrouter_client": openrouter_client
+        })
+        
+    if args.mock_mode:
+        print("MOCK MODE ENABLED: Simulating OpenRouter API responses")
+        if args.mock_seed is not None:
+            print(f"Using random seed: {args.mock_seed}")
 
-        try:
-            processor.process_preloaded_images(preloaded)
-        except KeyboardInterrupt:
-            print("\nInterrupted by user while processing. Saving partial results for this model...")
-        except Exception as e:
-            print(f"Fatal error while processing with model {model}: {e}")
-            continue
+    print("Starting processing. Fetching images one by one...")
+    
+    try:
+        # Iterate through images lazily
+        for idx, img_summary in enumerate(roboflow_client.yield_images(), 1):
+            image_id = img_summary.get("id")
+            if not image_id:
+                print(f"Skipping image without ID: {img_summary}")
+                continue
 
-        # Prefix output filenames with model name to avoid collisions
+            print(f"\nProcessing image {idx}: {img_summary.get('name', image_id)}")
+            
+            try:
+                # 1. Fetch metadata
+                metadata = roboflow_client.get_image_metadata(image_id)
+                
+                # 2. Determine URL and download image ONCE
+                image_url = None
+                if "urls" in metadata and "original" in metadata["urls"]:
+                    image_url = metadata["urls"]["original"]
+                elif "url" in metadata:
+                    image_url = metadata["url"]
+                else:
+                    image_url = f"{roboflow_client.base_url}/images/{image_id}/download"
+
+                image_data = roboflow_client.download_image(image_url)
+                
+                # 3. Process with ALL models
+                for p_data in processors:
+                    model = p_data["model"]
+                    processor = p_data["processor"]
+                    # print(f"  Querying {model}...")
+                    try:
+                        processor.process_image(metadata, image_data=image_data)
+                        # Result is stored internally in processor.results
+                    except Exception as e:
+                        print(f"  Error querying {model} for {image_id}: {e}")
+                        
+            except Exception as e:
+                print(f"Error processing image {image_id}: {e}")
+                continue
+                
+    except KeyboardInterrupt:
+        print("\nInterrupted by user. Saving partial results...")
+    except Exception as e:
+        print(f"Fatal error during processing: {e}")
+
+    # Save results for all processors
+    print("\nSaving results...")
+    for p_data in processors:
+        model_safe = p_data["model_safe"]
+        processor = p_data["processor"]
+        
         output_prefixed = f"{model_safe}_{args.output}"
-        if args.confusion_matrix_output:
-            confusion_prefixed = f"{model_safe}_{args.confusion_matrix_output}"
-        else:
-            confusion_prefixed = None
-
+        confusion_prefixed = f"{model_safe}_{args.confusion_matrix_output}" if args.confusion_matrix_output else None
+        
+        print(f"Saving results for {p_data['model']}...")
         processor.save_results(output_prefixed, confusion_prefixed)
 
 

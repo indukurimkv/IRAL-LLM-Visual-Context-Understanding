@@ -1,0 +1,14 @@
+{
+  "results": [],
+  "errors": [],
+  "summary": {
+    "total_images": 0,
+    "successful": 0,
+    "failed": 0,
+    "accuracy": 0.0,
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1_score": 0.0,
+    "confusion_matrix_file": null
+  }
+}

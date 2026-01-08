@@ -74,6 +74,53 @@ class RoboflowAPIClient:
         except requests.exceptions.RequestException as e:
             print(f"Error fetching images list: {e}")
             raise
+
+    def yield_images(self) -> any:
+        """Yield image metadata one by one, fetching pages as needed."""
+        # Use the project-level search endpoint with API key in query parameter
+        search_url = f"{self.base_url}/search?api_key={self.api_key}"
+        limit = 100  # Number of images per page
+        offset = 0
+        
+        while True:
+            # POST request to search endpoint with in_dataset filter
+            payload = {
+                "in_dataset": True,
+                "limit": limit,
+                "offset": offset
+            }
+            
+            try:
+                response = requests.post(
+                    search_url, 
+                    headers={"Content-Type": "application/json"}, 
+                    json=payload,
+                    timeout=30
+                )
+                response.raise_for_status()
+                data = response.json()
+                images = data.get("results", [])
+                
+                if not images:
+                    break
+                    
+                for image in images:
+                    yield image
+                
+                total = data.get("total", 0)
+                
+                # Check pagination
+                if total > 0:
+                    if offset + len(images) >= total:
+                        break
+                elif len(images) < limit:
+                    break
+                    
+                offset += limit
+                
+            except requests.exceptions.RequestException as e:
+                print(f"Error yielding images: {e}")
+                raise
     
     def get_image_metadata(self, image_id: str) -> Dict:
         """Fetch full metadata for a specific image including annotations."""
