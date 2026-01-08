@@ -30,18 +30,16 @@ class RoboflowAPIClient:
             offset = 0
             
             while True:
+
                 # POST request to search endpoint with in_dataset filter
                 # Body only contains in_dataset as specified
                 payload = {
-                    "in_dataset": True
+                    "in_dataset": True,
+                    "limit": limit,
+                    "offset": offset
                 }
-                # Always include limit parameter, add offset for subsequent pages
-                paginated_url = f"{search_url}&limit={limit}"
-                if offset > 0:
-                    paginated_url += f"&offset={offset}"
-                
                 response = requests.post(
-                    paginated_url, 
+                    search_url, 
                     headers={"Content-Type": "application/json"}, 
                     json=payload,
                     timeout=30
@@ -59,12 +57,14 @@ class RoboflowAPIClient:
                 
                 # Check pagination - get total
                 total = data.get("total", 0)
+                print(f"Total images: {total}")
+                print(f"Fetched {len(all_images)} images so far")
                 
                 # Check if we've fetched all images
                 if total > 0 and len(all_images) >= total:
-                    # Fetched all images
-                    break
-                if len(images) < limit:
+                        # Fetched all images
+                        break
+                elif len(images) < limit:
                     # Last page, no more images
                     break
                 # Move to next page
