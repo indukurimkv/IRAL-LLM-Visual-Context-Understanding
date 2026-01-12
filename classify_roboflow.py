@@ -186,11 +186,20 @@ def main():
         model_safe = p_data["model_safe"]
         processor = p_data["processor"]
         
-        output_prefixed = f"{model_safe}_{args.output}"
-        confusion_prefixed = f"{model_safe}_{args.confusion_matrix_output}" if args.confusion_matrix_output else None
+        # Define results directory
+        results_dir = "results"
+        model_dir = os.path.join(results_dir, model_safe)
+        os.makedirs(model_dir, exist_ok=True)
         
-        print(f"Saving results for {p_data['model']}...")
-        processor.save_results(output_prefixed, confusion_prefixed)
+        # Construct output paths inside the model directory
+        output_path = os.path.join(model_dir, args.output)
+        
+        confusion_path = None
+        if args.confusion_matrix_output:
+            confusion_path = os.path.join(model_dir, args.confusion_matrix_output)
+        
+        print(f"Saving results for {p_data['model']} to {model_dir}...")
+        processor.save_results(output_path, confusion_path)
 
 
 if __name__ == "__main__":
