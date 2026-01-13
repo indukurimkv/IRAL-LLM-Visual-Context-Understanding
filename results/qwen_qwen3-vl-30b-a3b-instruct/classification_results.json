@@ -5,8 +5,8 @@
       "image_id": "r3Bbl9RVhSDU8ZVPf7uK",
       "ground_truth": "00",
       "model_prediction": "00",
-      "model_response": "00: Safe: No anomalies or hazards detected",
-      "timestamp": "2026-01-13T08:17:31.547621",
+      "model_response": "00: The environment appears safe with no visible hazards or anomalies.",
+      "timestamp": "2026-01-13T08:38:06.001739",
       "match": true
     },
     {
@@ -14,170 +14,170 @@
       "image_id": "VgUi4JygVBe9D9c9oA97",
       "ground_truth": "00",
       "model_prediction": "10",
-      "model_response": "10: Anomalous: Anomaly detected but no hazards",
-      "timestamp": "2026-01-13T08:17:32.330368",
+      "model_response": "10: The pendant lights are unusually shaped and suspended in a way that deviates from typical lighting fixtures, appearing out of place in the context of the room.",
+      "timestamp": "2026-01-13T08:38:35.065768",
       "match": false
     },
     {
       "image_name": "2014.png",
       "image_id": "781rGblmCTHhWj3obtbF",
       "ground_truth": "00",
-      "model_prediction": "01",
-      "model_response": "01: Dangerous: Hazard detected but no anomalies",
-      "timestamp": "2026-01-13T08:17:32.737896",
+      "model_prediction": "10",
+      "model_response": "10: A poster for \"Pirates of the Caribbean\" is hanging on the wall, which is unusual given the context of a room with modern lighting and curtains, but not inherently dangerous.",
+      "timestamp": "2026-01-13T08:40:18.490899",
       "match": false
     },
     {
       "image_name": "0000334_01569_d_0000029.jpg",
       "image_id": "SifG7P9TyvQP4dbMsL6C",
       "ground_truth": "00",
-      "model_prediction": "11",
-      "model_response": "11: Anomalous Dangerous: Both anomaly and hazard detected",
-      "timestamp": "2026-01-13T08:17:33.085328",
+      "model_prediction": "10",
+      "model_response": "10: The scene shows an unusual arrangement of parked cars on a vacant lot, which is out of place compared to the surrounding urban environment, but no immediate danger is evident.",
+      "timestamp": "2026-01-13T08:41:05.086977",
       "match": false
     },
     {
       "image_name": "9999999_00719_d_0000327.jpg",
       "image_id": "Pbt9qvzC3Bid8UNNK82L",
       "ground_truth": "00",
-      "model_prediction": "00",
-      "model_response": "00: Safe: No anomalies or hazards detected",
-      "timestamp": "2026-01-13T08:17:33.476348",
-      "match": true
+      "model_prediction": "10",
+      "model_response": "10: A construction site with exposed rebar and debris is adjacent to a road with vehicles and pedestrians, which is unusual but not inherently dangerous.",
+      "timestamp": "2026-01-13T08:41:36.416362",
+      "match": false
     },
     {
       "image_name": "9999969_00000_d_0000037.jpg",
       "image_id": "R2LYctMICBL2nOZCgzTk",
       "ground_truth": "11",
-      "model_prediction": "11",
-      "model_response": "11: Anomalous Dangerous: Both anomaly and hazard detected",
-      "timestamp": "2026-01-13T08:17:33.896292",
-      "match": true
+      "model_prediction": "10",
+      "model_response": "10: A person is standing in the middle of a crosswalk at night, which is unusual but not inherently dangerous given the context of traffic flow.",
+      "timestamp": "2026-01-13T08:42:09.049144",
+      "match": false
     },
     {
       "image_name": "DSCF7732.jpg",
       "image_id": "BXhJPKfnT1CUr6vACoxa",
       "ground_truth": "10",
-      "model_prediction": "01",
-      "model_response": "01: Dangerous: Hazard detected but no anomalies",
-      "timestamp": "2026-01-13T08:17:38.090892",
+      "model_prediction": "11",
+      "model_response": "11: A broken chair and debris are submerged in the pool, posing both an anomaly and a hazard due to potential injury and water contamination.",
+      "timestamp": "2026-01-13T08:42:50.541683",
       "match": false
     },
     {
       "image_name": "DSCF7738.jpg",
       "image_id": "yLqVRzLjWhFCodoYUbU9",
       "ground_truth": "10",
-      "model_prediction": "00",
-      "model_response": "00: Safe: No anomalies or hazards detected",
-      "timestamp": "2026-01-13T08:17:39.050683",
-      "match": false
+      "model_prediction": "10",
+      "model_response": "10: A cigarette butt and ash are on the desk surface and in the drawer, which is unusual but not immediately dangerous.",
+      "timestamp": "2026-01-13T08:43:43.182275",
+      "match": true
     },
     {
       "image_name": "IMG_1139.jpeg",
       "image_id": "FPCJv8cq7BdqCHoi7QSn",
       "ground_truth": "11",
-      "model_prediction": "00",
-      "model_response": "00: Safe: No anomalies or hazards detected",
-      "timestamp": "2026-01-13T08:17:39.371823",
+      "model_prediction": "01",
+      "model_response": "01: A large blue liquid spill from a container poses a direct health and safety risk on the ground.",
+      "timestamp": "2026-01-13T08:44:09.741070",
       "match": false
     },
     {
       "image_name": "48405385507_34357ae814_z.jpg",
       "image_id": "CHl2oSfh74sEwqLFwKcy",
       "ground_truth": "11",
-      "model_prediction": "11",
-      "model_response": "11: Anomalous Dangerous: Both anomaly and hazard detected",
-      "timestamp": "2026-01-13T08:17:39.734433",
-      "match": true
+      "model_prediction": "01",
+      "model_response": "01: A large forest fire is actively burning, producing intense flames and thick smoke, posing an immediate danger to the environment and potentially to life and property.",
+      "timestamp": "2026-01-13T08:44:28.073838",
+      "match": false
     },
     {
       "image_name": "Screenshot 2025-03-20 112705.png",
       "image_id": "dtmfZEj6AkbpkNniW7np",
       "ground_truth": "11",
-      "model_prediction": "00",
-      "model_response": "00: Safe: No anomalies or hazards detected",
-      "timestamp": "2026-01-13T08:17:40.108745",
-      "match": false
+      "model_prediction": "11",
+      "model_response": "11: A hazardous chemical container is leaking on the ground, posing a danger, and is also an anomaly as it rests on an impossible surface (the tape) and is out of place.",
+      "timestamp": "2026-01-13T08:44:46.555511",
+      "match": true
     },
     {
       "image_name": "688.jpg",
       "image_id": "bBXbS3LYNKgc4qZK1QLY",
       "ground_truth": "01",
-      "model_prediction": "11",
-      "model_response": "11: Anomalous Dangerous: Both anomaly and hazard detected",
-      "timestamp": "2026-01-13T08:17:40.605724",
+      "model_prediction": "10",
+      "model_response": "10: The scene contains a tangled mess of extension cords on the ground, which is unusual and out of place in a construction setting, but not immediately dangerous.",
+      "timestamp": "2026-01-13T08:45:09.065583",
       "match": false
     },
     {
       "image_name": "Screenshot 2025-03-20 112403.png",
       "image_id": "jKo8kGKzhQmhNcsGKIps",
       "ground_truth": "11",
-      "model_prediction": "10",
-      "model_response": "10: Anomalous: Anomaly detected but no hazards",
-      "timestamp": "2026-01-13T08:17:40.989604",
-      "match": false
+      "model_prediction": "11",
+      "model_response": "11: A large spill of dark liquid on the ground near a hazardous material container, indicating both an anomaly (spill in an industrial area) and a danger (potential chemical hazard).",
+      "timestamp": "2026-01-13T08:45:39.603495",
+      "match": true
     },
     {
       "image_name": "IMG_20220625_130557938.jpg",
       "image_id": "wYCa0FHbxggeTjvJTUQ1",
       "ground_truth": "10",
-      "model_prediction": "11",
-      "model_response": "11: Anomalous Dangerous: Both anomaly and hazard detected",
-      "timestamp": "2026-01-13T08:17:41.943987",
-      "match": false
+      "model_prediction": "10",
+      "model_response": "10: The scene shows a forest with burnt trees and charred ground, which is unusual but not inherently dangerous in the context of a post-fire environment.",
+      "timestamp": "2026-01-13T08:46:02.432321",
+      "match": true
     },
     {
       "image_name": "Fotolia_62245720_S.jpg",
       "image_id": "pCcDNcxFxTaYuJmhcVFr",
       "ground_truth": "01",
-      "model_prediction": "01",
-      "model_response": "01: Dangerous: Hazard detected but no anomalies",
-      "timestamp": "2026-01-13T08:17:42.565077",
-      "match": true
+      "model_prediction": "11",
+      "model_response": "11: A spill of colorful liquid on the table is both anomalous due to its irregular shape and placement, and dangerous as it poses a slip hazard and potential chemical exposure.",
+      "timestamp": "2026-01-13T08:46:35.154480",
+      "match": false
     },
     {
       "image_name": "images454_jpg",
       "image_id": "EG7qBr1JeLqKDWg8Hizm",
       "ground_truth": "01",
       "model_prediction": "11",
-      "model_response": "11: Anomalous Dangerous: Both anomaly and hazard detected",
-      "timestamp": "2026-01-13T08:17:43.182439",
+      "model_response": "11: The presence of hazardous chemical containers with flammable and toxic labels indicates both an anomaly due to improper storage and a danger due to potential exposure risks.",
+      "timestamp": "2026-01-13T08:47:21.872993",
       "match": false
     },
     {
       "image_name": "Screenshot 2025-03-20 112432.png",
       "image_id": "QGeDHBbSHi0IKq1tSpJu",
       "ground_truth": "10",
-      "model_prediction": "10",
-      "model_response": "10: Anomalous: Anomaly detected but no hazards",
-      "timestamp": "2026-01-13T08:17:45.436221",
-      "match": true
+      "model_prediction": "01",
+      "model_response": "01: A hazardous chemical spill is present on the floor, indicating a risk of injury or contamination.",
+      "timestamp": "2026-01-13T08:47:52.115611",
+      "match": false
     },
     {
       "image_name": "Gemini_Generated_Image_tdq64wtdq64wtdq6.png",
       "image_id": "KXb34GtxUI4YjsZxoNid",
       "ground_truth": "10",
-      "model_prediction": "10",
-      "model_response": "10: Anomalous: Anomaly detected but no hazards",
-      "timestamp": "2026-01-13T08:17:45.883843",
-      "match": true
+      "model_prediction": "11",
+      "model_response": "11: A full-sized airplane is inside an airport terminal, which is both anomalous (out of place) and dangerous (potential hazard due to size and proximity to people).",
+      "timestamp": "2026-01-13T08:48:17.287353",
+      "match": false
     },
     {
       "image_name": "Gemini_Generated_Image_wtvchkwtvchkwtvc.png",
       "image_id": "z71dUGFm3w6JHtoaEkmy",
       "ground_truth": "01",
       "model_prediction": "11",
-      "model_response": "11: Anomalous Dangerous: Both anomaly and hazard detected",
-      "timestamp": "2026-01-13T08:17:49.587079",
+      "model_response": "11: A large tree has fallen across the road during a storm, blocking traffic and posing a significant danger due to the risk of electrocution from downed power lines and potential injuries from the falling tree.",
+      "timestamp": "2026-01-13T08:48:49.004867",
       "match": false
     },
     {
       "image_name": "weller-soldering-irons-wlbuk75-fa_600.avif",
       "image_id": "rqavXTX8HnpoJZ5nmDeA",
       "ground_truth": "01",
-      "model_prediction": "11",
-      "model_response": "11: Anomalous Dangerous: Both anomaly and hazard detected",
-      "timestamp": "2026-01-13T08:17:53.638254",
+      "model_prediction": "00",
+      "model_response": "00: The scene depicts a person using a soldering iron and magnifying glass for electronics work, with no visible hazards or anomalies in the setup.",
+      "timestamp": "2026-01-13T08:49:18.967190",
       "match": false
     }
   ],
@@ -186,10 +186,10 @@
     "total_images": 20,
     "successful": 20,
     "failed": 0,
-    "accuracy": 0.35,
-    "precision": 0.3708,
-    "recall": 0.35,
-    "f1_score": 0.3601,
+    "accuracy": 0.25,
+    "precision": 0.2589,
+    "recall": 0.25,
+    "f1_score": 0.2544,
     "confusion_matrix_file": "results/qwen_qwen3-vl-30b-a3b-instruct/classification_results_confusion_matrix.png"
   }
 }

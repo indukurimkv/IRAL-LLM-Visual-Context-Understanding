@@ -4,19 +4,19 @@
       "image_name": "2306.png",
       "image_id": "r3Bbl9RVhSDU8ZVPf7uK",
       "ground_truth": "00",
-      "model_prediction": "10",
-      "model_response": "10: Anomalous: Anomaly detected but no hazards",
-      "timestamp": "2026-01-13T08:16:11.051638",
-      "match": false
+      "model_prediction": "00",
+      "model_response": "00: Safe: No anomalies or hazards detected",
+      "timestamp": "2026-01-13T18:38:34.975244",
+      "match": true
     },
     {
       "image_name": "2284.png",
       "image_id": "VgUi4JygVBe9D9c9oA97",
       "ground_truth": "00",
-      "model_prediction": "10",
-      "model_response": "10: Anomalous: Anomaly detected but no hazards",
-      "timestamp": "2026-01-13T08:16:11.457192",
-      "match": false
+      "model_prediction": "00",
+      "model_response": "00: Safe: No anomalies or hazards detected",
+      "timestamp": "2026-01-13T18:38:35.446449",
+      "match": true
     },
     {
       "image_name": "2014.png",
@@ -24,25 +24,7 @@
       "ground_truth": "00",
       "model_prediction": "10",
       "model_response": "10: Anomalous: Anomaly detected but no hazards",
-      "timestamp": "2026-01-13T08:16:11.822389",
-      "match": false
-    },
-    {
-      "image_name": "0000334_01569_d_0000029.jpg",
-      "image_id": "SifG7P9TyvQP4dbMsL6C",
-      "ground_truth": "00",
-      "model_prediction": "10",
-      "model_response": "10: Anomalous: Anomaly detected but no hazards",
-      "timestamp": "2026-01-13T08:16:12.394707",
-      "match": false
-    },
-    {
-      "image_name": "9999999_00719_d_0000327.jpg",
-      "image_id": "Pbt9qvzC3Bid8UNNK82L",
-      "ground_truth": "00",
-      "model_prediction": "01",
-      "model_response": "01: Dangerous: Hazard detected but no anomalies",
-      "timestamp": "2026-01-13T08:16:12.778746",
+      "timestamp": "2026-01-13T18:38:35.902287",
       "match": false
     },
     {
@@ -51,145 +33,91 @@
       "ground_truth": "11",
       "model_prediction": "01",
       "model_response": "01: Dangerous: Hazard detected but no anomalies",
-      "timestamp": "2026-01-13T08:16:13.117241",
+      "timestamp": "2026-01-13T18:38:36.831577",
       "match": false
     },
     {
       "image_name": "DSCF7732.jpg",
       "image_id": "BXhJPKfnT1CUr6vACoxa",
       "ground_truth": "10",
-      "model_prediction": "11",
-      "model_response": "11: Anomalous Dangerous: Both anomaly and hazard detected",
-      "timestamp": "2026-01-13T08:16:17.765579",
+      "model_prediction": "01",
+      "model_response": "01: Dangerous: Hazard detected but no anomalies",
+      "timestamp": "2026-01-13T18:38:43.431477",
       "match": false
     },
     {
       "image_name": "DSCF7738.jpg",
       "image_id": "yLqVRzLjWhFCodoYUbU9",
       "ground_truth": "10",
-      "model_prediction": "11",
-      "model_response": "11: Anomalous Dangerous: Both anomaly and hazard detected",
-      "timestamp": "2026-01-13T08:16:18.754743",
+      "model_prediction": "01",
+      "model_response": "01: Dangerous: Hazard detected but no anomalies",
+      "timestamp": "2026-01-13T18:38:44.146936",
       "match": false
     },
     {
       "image_name": "IMG_1139.jpeg",
       "image_id": "FPCJv8cq7BdqCHoi7QSn",
       "ground_truth": "11",
-      "model_prediction": "01",
-      "model_response": "01: Dangerous: Hazard detected but no anomalies",
-      "timestamp": "2026-01-13T08:16:19.180252",
+      "model_prediction": "00",
+      "model_response": "00: Safe: No anomalies or hazards detected",
+      "timestamp": "2026-01-13T18:38:44.684000",
       "match": false
     },
     {
       "image_name": "48405385507_34357ae814_z.jpg",
       "image_id": "CHl2oSfh74sEwqLFwKcy",
       "ground_truth": "11",
-      "model_prediction": "10",
-      "model_response": "10: Anomalous: Anomaly detected but no hazards",
-      "timestamp": "2026-01-13T08:16:19.579572",
+      "model_prediction": "00",
+      "model_response": "00: Safe: No anomalies or hazards detected",
+      "timestamp": "2026-01-13T18:38:45.061002",
       "match": false
-    },
-    {
-      "image_name": "Screenshot 2025-03-20 112705.png",
-      "image_id": "dtmfZEj6AkbpkNniW7np",
-      "ground_truth": "11",
-      "model_prediction": "11",
-      "model_response": "11: Anomalous Dangerous: Both anomaly and hazard detected",
-      "timestamp": "2026-01-13T08:16:20.012502",
-      "match": true
     },
     {
       "image_name": "688.jpg",
       "image_id": "bBXbS3LYNKgc4qZK1QLY",
       "ground_truth": "01",
-      "model_prediction": "01",
-      "model_response": "01: Dangerous: Hazard detected but no anomalies",
-      "timestamp": "2026-01-13T08:16:20.579828",
-      "match": true
-    },
-    {
-      "image_name": "Screenshot 2025-03-20 112403.png",
-      "image_id": "jKo8kGKzhQmhNcsGKIps",
-      "ground_truth": "11",
-      "model_prediction": "01",
-      "model_response": "01: Dangerous: Hazard detected but no anomalies",
-      "timestamp": "2026-01-13T08:16:20.994313",
+      "model_prediction": "11",
+      "model_response": "11: Anomalous Dangerous: Both anomaly and hazard detected",
+      "timestamp": "2026-01-13T18:38:46.019366",
       "match": false
     },
     {
       "image_name": "IMG_20220625_130557938.jpg",
       "image_id": "wYCa0FHbxggeTjvJTUQ1",
       "ground_truth": "10",
-      "model_prediction": "01",
-      "model_response": "01: Dangerous: Hazard detected but no anomalies",
-      "timestamp": "2026-01-13T08:16:22.143130",
+      "model_prediction": "00",
+      "model_response": "00: Safe: No anomalies or hazards detected",
+      "timestamp": "2026-01-13T18:38:47.607286",
       "match": false
     },
     {
       "image_name": "Fotolia_62245720_S.jpg",
       "image_id": "pCcDNcxFxTaYuJmhcVFr",
       "ground_truth": "01",
-      "model_prediction": "10",
-      "model_response": "10: Anomalous: Anomaly detected but no hazards",
-      "timestamp": "2026-01-13T08:16:22.899372",
+      "model_prediction": "00",
+      "model_response": "00: Safe: No anomalies or hazards detected",
+      "timestamp": "2026-01-13T18:38:48.336810",
       "match": false
     },
     {
       "image_name": "images454_jpg",
       "image_id": "EG7qBr1JeLqKDWg8Hizm",
       "ground_truth": "01",
-      "model_prediction": "01",
-      "model_response": "01: Dangerous: Hazard detected but no anomalies",
-      "timestamp": "2026-01-13T08:16:23.488474",
-      "match": true
-    },
-    {
-      "image_name": "Screenshot 2025-03-20 112432.png",
-      "image_id": "QGeDHBbSHi0IKq1tSpJu",
-      "ground_truth": "10",
-      "model_prediction": "01",
-      "model_response": "01: Dangerous: Hazard detected but no anomalies",
-      "timestamp": "2026-01-13T08:16:26.176880",
-      "match": false
-    },
-    {
-      "image_name": "Gemini_Generated_Image_tdq64wtdq64wtdq6.png",
-      "image_id": "KXb34GtxUI4YjsZxoNid",
-      "ground_truth": "10",
-      "model_prediction": "10",
-      "model_response": "10: Anomalous: Anomaly detected but no hazards",
-      "timestamp": "2026-01-13T08:16:26.708816",
-      "match": true
-    },
-    {
-      "image_name": "Gemini_Generated_Image_wtvchkwtvchkwtvc.png",
-      "image_id": "z71dUGFm3w6JHtoaEkmy",
-      "ground_truth": "01",
       "model_prediction": "00",
       "model_response": "00: Safe: No anomalies or hazards detected",
-      "timestamp": "2026-01-13T08:16:29.799602",
-      "match": false
-    },
-    {
-      "image_name": "weller-soldering-irons-wlbuk75-fa_600.avif",
-      "image_id": "rqavXTX8HnpoJZ5nmDeA",
-      "ground_truth": "01",
-      "model_prediction": "10",
-      "model_response": "10: Anomalous: Anomaly detected but no hazards",
-      "timestamp": "2026-01-13T08:16:34.517324",
+      "timestamp": "2026-01-13T18:38:49.134413",
       "match": false
     }
   ],
   "errors": [],
   "summary": {
-    "total_images": 20,
-    "successful": 20,
+    "total_images": 12,
+    "successful": 12,
     "failed": 0,
-    "accuracy": 0.2,
-    "precision": 0.1771,
-    "recall": 0.2,
-    "f1_score": 0.1878,
+    "accuracy": 0.1667,
+    "precision": 0.0714,
+    "recall": 0.1667,
+    "f1_score": 0.1,
     "confusion_matrix_file": "results/anthropic_claude-3.5-sonnet/classification_results_confusion_matrix.png"
   }
 }

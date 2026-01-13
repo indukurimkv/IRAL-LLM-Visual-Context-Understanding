@@ -4,63 +4,63 @@
       "image_name": "2306.png",
       "image_id": "r3Bbl9RVhSDU8ZVPf7uK",
       "ground_truth": "00",
-      "model_prediction": "10",
-      "model_response": "10: Anomalous: Anomaly detected but no hazards",
-      "timestamp": "2026-01-13T08:17:31.547602",
-      "match": false
+      "model_prediction": "00",
+      "model_response": "00: This is",
+      "timestamp": "2026-01-13T09:19:23.570180",
+      "match": true
     },
     {
       "image_name": "2284.png",
       "image_id": "VgUi4JygVBe9D9c9oA97",
       "ground_truth": "00",
       "model_prediction": "10",
-      "model_response": "10: Anomalous: Anomaly detected but no hazards",
-      "timestamp": "2026-01-13T08:17:32.330355",
+      "model_response": "10: The four hanging",
+      "timestamp": "2026-01-13T09:20:04.073836",
       "match": false
     },
     {
       "image_name": "2014.png",
       "image_id": "781rGblmCTHhWj3obtbF",
       "ground_truth": "00",
-      "model_prediction": "10",
-      "model_response": "10: Anomalous: Anomaly detected but no hazards",
-      "timestamp": "2026-01-13T08:17:32.737885",
+      "model_prediction": "11",
+      "model_response": "11: The light fixture is hanging",
+      "timestamp": "2026-01-13T09:20:46.380816",
       "match": false
     },
     {
       "image_name": "0000334_01569_d_0000029.jpg",
       "image_id": "SifG7P9TyvQP4dbMsL6C",
       "ground_truth": "00",
-      "model_prediction": "01",
-      "model_response": "01: Dangerous: Hazard detected but no anomalies",
-      "timestamp": "2026-01-13T08:17:33.085316",
-      "match": false
+      "model_prediction": "00",
+      "model_response": "00: This is a normal aerial",
+      "timestamp": "2026-01-13T09:22:19.624695",
+      "match": true
     },
     {
       "image_name": "9999999_00719_d_0000327.jpg",
       "image_id": "Pbt9qvzC3Bid8UNNK82L",
       "ground_truth": "00",
       "model_prediction": "10",
-      "model_response": "10: Anomalous: Anomaly detected but no hazards",
-      "timestamp": "2026-01-13T08:17:33.476334",
+      "model_response": "10: A single white car is",
+      "timestamp": "2026-01-13T09:22:57.009263",
       "match": false
     },
     {
       "image_name": "9999969_00000_d_0000037.jpg",
       "image_id": "R2LYctMICBL2nOZCgzTk",
       "ground_truth": "11",
-      "model_prediction": "10",
-      "model_response": "10: Anomalous: Anomaly detected but no hazards",
-      "timestamp": "2026-01-13T08:17:33.896280",
+      "model_prediction": "01",
+      "model_response": "01: A pedestrian is",
+      "timestamp": "2026-01-13T09:23:54.869393",
       "match": false
     },
     {
       "image_name": "DSCF7732.jpg",
       "image_id": "BXhJPKfnT1CUr6vACoxa",
       "ground_truth": "10",
-      "model_prediction": "00",
-      "model_response": "00: Safe: No anomalies or hazards detected",
-      "timestamp": "2026-01-13T08:17:38.090874",
+      "model_prediction": "11",
+      "model_response": "11: Several pieces of furniture",
+      "timestamp": "2026-01-13T09:24:24.467230",
       "match": false
     },
     {
@@ -68,8 +68,8 @@
       "image_id": "yLqVRzLjWhFCodoYUbU9",
       "ground_truth": "10",
       "model_prediction": "01",
-      "model_response": "01: Dangerous: Hazard detected but no anomalies",
-      "timestamp": "2026-01-13T08:17:39.050673",
+      "model_response": "01: A cigarette butt left on",
+      "timestamp": "2026-01-13T09:25:07.612562",
       "match": false
     },
     {
@@ -77,44 +77,44 @@
       "image_id": "FPCJv8cq7BdqCHoi7QSn",
       "ground_truth": "11",
       "model_prediction": "01",
-      "model_response": "01: Dangerous: Hazard detected but no anomalies",
-      "timestamp": "2026-01-13T08:17:39.371819",
+      "model_response": "01: An unidentified blue substance",
+      "timestamp": "2026-01-13T09:26:00.261326",
       "match": false
     },
     {
       "image_name": "48405385507_34357ae814_z.jpg",
       "image_id": "CHl2oSfh74sEwqLFwKcy",
       "ground_truth": "11",
-      "model_prediction": "11",
-      "model_response": "11: Anomalous Dangerous: Both anomaly and hazard detected",
-      "timestamp": "2026-01-13T08:17:39.734420",
-      "match": true
+      "model_prediction": "01",
+      "model_response": "01: A large",
+      "timestamp": "2026-01-13T09:26:20.451822",
+      "match": false
     },
     {
       "image_name": "Screenshot 2025-03-20 112705.png",
       "image_id": "dtmfZEj6AkbpkNniW7np",
       "ground_truth": "11",
-      "model_prediction": "10",
-      "model_response": "10: Anomalous: Anomaly detected but no hazards",
-      "timestamp": "2026-01-13T08:17:40.108737",
+      "model_prediction": null,
+      "model_response": "",
+      "timestamp": "2026-01-13T09:26:58.667792",
       "match": false
     },
     {
       "image_name": "688.jpg",
       "image_id": "bBXbS3LYNKgc4qZK1QLY",
       "ground_truth": "01",
-      "model_prediction": "10",
-      "model_response": "10: Anomalous: Anomaly detected but no hazards",
-      "timestamp": "2026-01-13T08:17:40.605714",
-      "match": false
+      "model_prediction": "01",
+      "model_response": "01: The tangled extension",
+      "timestamp": "2026-01-13T09:27:22.198644",
+      "match": true
     },
     {
       "image_name": "Screenshot 2025-03-20 112403.png",
       "image_id": "jKo8kGKzhQmhNcsGKIps",
       "ground_truth": "11",
-      "model_prediction": "10",
-      "model_response": "10: Anomalous: Anomaly detected but no hazards",
-      "timestamp": "2026-01-13T08:17:40.989593",
+      "model_prediction": "01",
+      "model_response": "01: A chemical substance has been",
+      "timestamp": "2026-01-13T09:28:38.459651",
       "match": false
     },
     {
@@ -122,8 +122,8 @@
       "image_id": "wYCa0FHbxggeTjvJTUQ1",
       "ground_truth": "10",
       "model_prediction": "01",
-      "model_response": "01: Dangerous: Hazard detected but no anomalies",
-      "timestamp": "2026-01-13T08:17:41.943974",
+      "model_response": "01: The numerous standing dead",
+      "timestamp": "2026-01-13T09:29:05.889184",
       "match": false
     },
     {
@@ -131,26 +131,26 @@
       "image_id": "pCcDNcxFxTaYuJmhcVFr",
       "ground_truth": "01",
       "model_prediction": "01",
-      "model_response": "01: Dangerous: Hazard detected but no anomalies",
-      "timestamp": "2026-01-13T08:17:42.565062",
+      "model_response": "01: Spilled chemicals in a",
+      "timestamp": "2026-01-13T09:29:26.046135",
       "match": true
     },
     {
       "image_name": "images454_jpg",
       "image_id": "EG7qBr1JeLqKDWg8Hizm",
       "ground_truth": "01",
-      "model_prediction": "11",
-      "model_response": "11: Anomalous Dangerous: Both anomaly and hazard detected",
-      "timestamp": "2026-01-13T08:17:43.182423",
-      "match": false
+      "model_prediction": "01",
+      "model_response": "01: The containers are labeled",
+      "timestamp": "2026-01-13T09:29:51.661846",
+      "match": true
     },
     {
       "image_name": "Screenshot 2025-03-20 112432.png",
       "image_id": "QGeDHBbSHi0IKq1tSpJu",
       "ground_truth": "10",
       "model_prediction": "01",
-      "model_response": "01: Dangerous: Hazard detected but no anomalies",
-      "timestamp": "2026-01-13T08:17:45.436208",
+      "model_response": "01: Spilled liquid",
+      "timestamp": "2026-01-13T09:30:32.174191",
       "match": false
     },
     {
@@ -158,27 +158,27 @@
       "image_id": "KXb34GtxUI4YjsZxoNid",
       "ground_truth": "10",
       "model_prediction": "10",
-      "model_response": "10: Anomalous: Anomaly detected but no hazards",
-      "timestamp": "2026-01-13T08:17:45.883838",
+      "model_response": "10: An airplane is",
+      "timestamp": "2026-01-13T09:30:55.677554",
       "match": true
     },
     {
       "image_name": "Gemini_Generated_Image_wtvchkwtvchkwtvc.png",
       "image_id": "z71dUGFm3w6JHtoaEkmy",
       "ground_truth": "01",
-      "model_prediction": "00",
-      "model_response": "00: Safe: No anomalies or hazards detected",
-      "timestamp": "2026-01-13T08:17:49.587071",
-      "match": false
+      "model_prediction": "01",
+      "model_response": "01: A large, up",
+      "timestamp": "2026-01-13T09:31:21.466541",
+      "match": true
     },
     {
       "image_name": "weller-soldering-irons-wlbuk75-fa_600.avif",
       "image_id": "rqavXTX8HnpoJZ5nmDeA",
       "ground_truth": "01",
-      "model_prediction": "11",
-      "model_response": "11: Anomalous Dangerous: Both anomaly and hazard detected",
-      "timestamp": "2026-01-13T08:17:53.638249",
-      "match": false
+      "model_prediction": "01",
+      "model_response": "01: The person is",
+      "timestamp": "2026-01-13T09:32:01.557111",
+      "match": true
     }
   ],
   "errors": [],
@@ -186,10 +186,10 @@
     "total_images": 20,
     "successful": 20,
     "failed": 0,
-    "accuracy": 0.15,
-    "precision": 0.1528,
-    "recall": 0.15,
-    "f1_score": 0.1514,
+    "accuracy": 0.4,
+    "precision": 0.4375,
+    "recall": 0.4,
+    "f1_score": 0.4179,
     "confusion_matrix_file": "results/google_gemini-2.5-pro/classification_results_confusion_matrix.png"
   }
 }

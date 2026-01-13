@@ -8,8 +8,10 @@ and stores results with ground truth annotations.
 """
 
 import argparse
+import logging
 import os
 import sys
+from datetime import datetime
 
 from dotenv import load_dotenv
 
@@ -110,8 +112,29 @@ def main():
         print("Error: --class-max must be a positive integer when provided")
         sys.exit(1)
     
+    # Set up logging
+    logs_dir = "logs"
+    os.makedirs(logs_dir, exist_ok=True)
+    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    log_file = os.path.join(logs_dir, f"run_{timestamp}.log")
+    
+    # Configure logging to write to both file and console
+    logging.basicConfig(
+        level=logging.INFO,
+        format='%(asctime)s - %(levelname)s - %(message)s',
+        handlers=[
+            logging.FileHandler(log_file),
+            logging.StreamHandler()
+        ]
+    )
+    logger = logging.getLogger(__name__)
+    
+    logger.info("="*80)
+    logger.info(f"Starting new classification run - Log file: {log_file}")
+    logger.info("="*80)
+    
     # Initialize API clients with credentials
-    print("Initializing clients...")
+    logger.info("Initializing clients...")
     roboflow_client = RoboflowAPIClient(
         args.roboflow_api_key,
         args.workspace_id,
@@ -122,7 +145,7 @@ def main():
 
     # Initialize processors for all models
     processors = []
-    print(f"Initializing processors for models: {models}")
+    logger.info(f"Initializing processors for models: {models}")
     
     for model in models:
         model_safe = model.replace('/', '_')
@@ -140,15 +163,18 @@ def main():
         })
         
     if args.mock_mode:
-        print("MOCK MODE ENABLED: Simulating OpenRouter API responses")
+        logger.info("MOCK MODE ENABLED: Simulating OpenRouter API responses")
         if args.mock_seed is not None:
-            print(f"Using random seed: {args.mock_seed}")
+            logger.info(f"Using random seed: {args.mock_seed}")
 
-    print("Starting processing. Fetching images one by one...")
+    logger.info("Starting processing. Fetching images one by one...")
+    if args.class_max:
+        logger.info(f"Class limit enabled: maximum {args.class_max} images per class")
     
     class_max = args.class_max
     class_codes = ["00", "01", "10", "11"]
     class_counts = {code: 0 for code in class_codes}
+    class_processed = {code: 0 for code in class_codes}
     annotation_parser = AnnotationParser()
 
     def limits_reached() -> bool:
@@ -160,15 +186,15 @@ def main():
         # Iterate through images lazily
         for idx, img_summary in enumerate(roboflow_client.yield_images(), 1):
             if limits_reached():
-                print(f"All classes have reached the limit of {class_max}. Stopping early and saving results...")
+                logger.info(f"All classes have reached the limit of {class_max}. Stopping early and saving results...")
                 break
 
             image_id = img_summary.get("id")
             if not image_id:
-                print(f"Skipping image without ID: {img_summary}")
+                logger.warning(f"Skipping image without ID: {img_summary}")
                 continue
 
-            print(f"\nProcessing image {idx}: {img_summary.get('name', image_id)}")
+            logger.info(f"Processing image {idx}: {img_summary.get('name', image_id)}")
             
             try:
                 # 1. Fetch metadata
@@ -177,15 +203,16 @@ def main():
 
                 if class_max is not None:
                     if ground_truth is None:
-                        print(f"Skipping {img_summary.get('name', image_id)}: No annotation found for class limit check")
+                        logger.warning(f"Skipping {img_summary.get('name', image_id)}: No annotation found for class limit check")
                         continue
 
                     # Include any unexpected class in tracking so limits still apply uniformly
                     if ground_truth not in class_counts:
                         class_counts[ground_truth] = 0
+                        class_processed[ground_truth] = 0
 
                     if class_counts[ground_truth] >= class_max:
-                        print(f"Skipping {img_summary.get('name', image_id)}: Class {ground_truth} reached limit {class_max}")
+                        logger.info(f"Skipping {img_summary.get('name', image_id)}: Class {ground_truth} reached limit {class_max}")
                         continue
                 
                 # 2. Determine URL and download image ONCE
@@ -202,40 +229,48 @@ def main():
                 if class_max is not None and ground_truth is not None:
                     class_counts[ground_truth] += 1
                 
+                # Track processed count for summary
+                if ground_truth is not None:
+                    if ground_truth not in class_processed:
+                        class_processed[ground_truth] = 0
+                    class_processed[ground_truth] += 1
+                
                 # 3. Process with ALL models
                 for p_data in processors:
                     model = p_data["model"]
                     processor = p_data["processor"]
-                    # print(f"  Querying {model}...")
+                    logger.debug(f"  Querying {model}...")
                     try:
                         result = processor.process_image(metadata, image_data=image_data)
                         if result:
                             processor.results.append(result)
+                            logger.debug(f"  {model}: Predicted {result.get('model_prediction', 'N/A')}, Ground truth: {result.get('ground_truth', 'N/A')}")
                     except Exception as e:
-                        print(f"  Error querying {model} for {image_id}: {e}")
+                        logger.error(f"  Error querying {model} for {image_id}: {e}")
 
                 if limits_reached():
                     stop_due_to_limits = True
-                    print(f"Reached class limit {class_max} for all classes after {img_summary.get('name', image_id)}. Stopping...\n")
+                    logger.info(f"Reached class limit {class_max} for all classes after {img_summary.get('name', image_id)}. Stopping...")
                     break
                         
             except Exception as e:
-                print(f"Error processing image {image_id}: {e}")
+                logger.error(f"Error processing image {image_id}: {e}")
                 continue
 
         if stop_due_to_limits:
-            print("Class limits satisfied; proceeding to save results.")
+            logger.info("Class limits satisfied; proceeding to save results.")
 
     except KeyboardInterrupt:
-        print("\nInterrupted by user. Saving partial results...")
+        logger.warning("\nInterrupted by user. Saving partial results...")
     except Exception as e:
-        print(f"Fatal error during processing: {e}")
+        logger.error(f"Fatal error during processing: {e}")
 
     # Save results for all processors
-    print("\nSaving results...")
+    logger.info("\nSaving results...")
     for p_data in processors:
         model_safe = p_data["model_safe"]
         processor = p_data["processor"]
+        model = p_data["model"]
         
         # Define results directory
         results_dir = "results"
@@ -249,8 +284,24 @@ def main():
         if args.confusion_matrix_output:
             confusion_path = os.path.join(model_dir, args.confusion_matrix_output)
         
-        print(f"Saving results for {p_data['model']} to {model_dir}...")
+        logger.info(f"Saving results for {model} to {model_dir}...")
         processor.save_results(output_path, confusion_path)
+        
+        # Log summary for this model
+        logger.info("\n" + "="*80)
+        logger.info("RUN SUMMARY")
+        logger.info("="*80)
+        logger.info(f"Model: {model}")
+        logger.info(f"Images processed per class:")
+        for class_code in sorted(class_processed.keys()):
+            logger.info(f"  Class {class_code}: {class_processed[class_code]} images")
+        logger.info(f"Total images processed: {sum(class_processed.values())}")
+        logger.info(f"Results saved to: {os.path.abspath(output_path)}")
+        if confusion_path:
+            logger.info(f"Confusion matrix saved to: {os.path.abspath(confusion_path)}")
+        logger.info("="*80)
+    
+    logger.info(f"\nLog file saved to: {os.path.abspath(log_file)}")
 
 
 if __name__ == "__main__":
