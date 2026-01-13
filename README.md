@@ -73,6 +73,7 @@ python classify_roboflow.py \
     --project-id "your_project_id" \
     --roboflow-api-key "your_roboflow_api_key" \
     --openrouter-api-key "your_openrouter_api_key" \
+  --class-max 50 \
     --output "classification_results.json" \
     --model "anthropic/claude-3.5-sonnet"
 ```
@@ -112,6 +113,7 @@ python analyze_results.py \
 - `--output`: Output JSON file path (default: `classification_results.json`)
 - `--model`: OpenRouter model to use (default: `anthropic/claude-3.5-sonnet`)
 - `--confusion-matrix-output`: Output path for confusion matrix image (default: `<output_file>_confusion_matrix.png`)
+- `--class-max`: Maximum images to download per class (00, 01, 10, 11). Images beyond the cap are skipped, and processing stops early once every class reaches the limit before saving results
 - `--mock-mode`: Enable mock mode - simulates OpenRouter API responses without making actual API calls (saves credits)
 - `--mock-seed`: Random seed for mock mode (for reproducible results). Only used when `--mock-mode` is enabled
 
