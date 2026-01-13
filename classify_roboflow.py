@@ -13,6 +13,7 @@ import sys
 
 from dotenv import load_dotenv
 
+from annotation_parser import AnnotationParser
 from mock_openrouter_client import MockOpenRouterClient
 from openrouter_client import OpenRouterClient
 from processor import ClassificationProcessor
@@ -66,6 +67,12 @@ def main():
         help="Output path for confusion matrix image (default: <output_file>_confusion_matrix.png)"
     )
     parser.add_argument(
+        "--class-max",
+        type=int,
+        default=None,
+        help="Maximum images to download per class (00, 01, 10, 11). If omitted, no per-class limit"
+    )
+    parser.add_argument(
         "--mock-mode",
         action="store_true",
         help="Enable mock mode: simulate OpenRouter API responses without making actual API calls (saves credits)"
@@ -97,6 +104,10 @@ def main():
     
     if not args.project_id:
         print("Error: Roboflow project ID is required. Set ROBOFLOW_PROJECT_ID in .env file or use --project-id")
+        sys.exit(1)
+
+    if args.class_max is not None and args.class_max <= 0:
+        print("Error: --class-max must be a positive integer when provided")
         sys.exit(1)
     
     # Initialize API clients with credentials
@@ -135,9 +146,23 @@ def main():
 
     print("Starting processing. Fetching images one by one...")
     
+    class_max = args.class_max
+    class_codes = ["00", "01", "10", "11"]
+    class_counts = {code: 0 for code in class_codes}
+    annotation_parser = AnnotationParser()
+
+    def limits_reached() -> bool:
+        return class_max is not None and all(count >= class_max for count in class_counts.values())
+
+    stop_due_to_limits = False
+
     try:
         # Iterate through images lazily
         for idx, img_summary in enumerate(roboflow_client.yield_images(), 1):
+            if limits_reached():
+                print(f"All classes have reached the limit of {class_max}. Stopping early and saving results...")
+                break
+
             image_id = img_summary.get("id")
             if not image_id:
                 print(f"Skipping image without ID: {img_summary}")
@@ -148,6 +173,20 @@ def main():
             try:
                 # 1. Fetch metadata
                 metadata = roboflow_client.get_image_metadata(image_id)
+                ground_truth = annotation_parser.extract_prefix_code(metadata)
+
+                if class_max is not None:
+                    if ground_truth is None:
+                        print(f"Skipping {img_summary.get('name', image_id)}: No annotation found for class limit check")
+                        continue
+
+                    # Include any unexpected class in tracking so limits still apply uniformly
+                    if ground_truth not in class_counts:
+                        class_counts[ground_truth] = 0
+
+                    if class_counts[ground_truth] >= class_max:
+                        print(f"Skipping {img_summary.get('name', image_id)}: Class {ground_truth} reached limit {class_max}")
+                        continue
                 
                 # 2. Determine URL and download image ONCE
                 image_url = None
@@ -159,6 +198,9 @@ def main():
                     image_url = f"{roboflow_client.base_url}/images/{image_id}/download"
 
                 image_data = roboflow_client.download_image(image_url)
+
+                if class_max is not None and ground_truth is not None:
+                    class_counts[ground_truth] += 1
                 
                 # 3. Process with ALL models
                 for p_data in processors:
@@ -170,11 +212,19 @@ def main():
                         # Result is stored internally in processor.results
                     except Exception as e:
                         print(f"  Error querying {model} for {image_id}: {e}")
+
+                if limits_reached():
+                    stop_due_to_limits = True
+                    print(f"Reached class limit {class_max} for all classes after {img_summary.get('name', image_id)}. Stopping...\n")
+                    break
                         
             except Exception as e:
                 print(f"Error processing image {image_id}: {e}")
                 continue
-                
+
+        if stop_due_to_limits:
+            print("Class limits satisfied; proceeding to save results.")
+
     except KeyboardInterrupt:
         print("\nInterrupted by user. Saving partial results...")
     except Exception as e:
