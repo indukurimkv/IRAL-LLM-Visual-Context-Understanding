@@ -208,8 +208,9 @@ def main():
                     processor = p_data["processor"]
                     # print(f"  Querying {model}...")
                     try:
-                        processor.process_image(metadata, image_data=image_data)
-                        # Result is stored internally in processor.results
+                        result = processor.process_image(metadata, image_data=image_data)
+                        if result:
+                            processor.results.append(result)
                     except Exception as e:
                         print(f"  Error querying {model} for {image_id}: {e}")
 
