@@ -3,6 +3,10 @@ from pathlib import Path
 from openai import OpenAI
 from roboflow import Roboflow
 from datetime import datetime
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # --- Download dataset in openai format ---
 rf = Roboflow(api_key="mHudEyXIfnCbIykoNIcm")
@@ -24,7 +28,8 @@ with open(json_path, "r") as f:
     data = json.load(f)
 
 # --- OpenAI setup ---
-client = OpenAI(api_key="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")
+OPENAI_KEY = os.getenv("OPENAI_API_KEY")
+client = OpenAI(api_key=OPENAI_KEY)
 timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
 output_file = Path(f"roboflow_hazard_results_{timestamp}.txt")
 
