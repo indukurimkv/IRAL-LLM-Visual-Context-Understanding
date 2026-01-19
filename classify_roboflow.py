@@ -19,6 +19,7 @@ from annotation_parser import AnnotationParser
 from mock_openrouter_client import MockOpenRouterClient
 from openrouter_client import OpenRouterClient
 from processor import ClassificationProcessor
+from pdf_report import generate_pdf_report
 from roboflow_client import RoboflowAPIClient
 
 # Load environment variables from .env file
@@ -181,6 +182,9 @@ def main():
         return class_max is not None and all(count >= class_max for count in class_counts.values())
 
     stop_due_to_limits = False
+    # Aggregate predictions across all models per image for PDF report
+    report_items = []
+    report_index_by_id = {}
 
     try:
         # Iterate through images lazily
@@ -226,6 +230,17 @@ def main():
 
                 image_data = roboflow_client.download_image(image_url)
 
+                # Initialize aggregated report entry
+                if image_id not in report_index_by_id:
+                    report_index_by_id[image_id] = len(report_items)
+                    report_items.append({
+                        "image_id": image_id,
+                        "image_name": metadata.get("name", image_id),
+                        "image_data": image_data,
+                        "ground_truth": ground_truth,
+                        "model_predictions": {}
+                    })
+
                 if class_max is not None and ground_truth is not None:
                     class_counts[ground_truth] += 1
                 
@@ -244,6 +259,12 @@ def main():
                         result = processor.process_image(metadata, image_data=image_data)
                         if result:
                             processor.results.append(result)
+                            # Store per-model prediction for consolidated PDF
+                            idx_item = report_index_by_id[image_id]
+                            report_items[idx_item]["model_predictions"][model] = {
+                                "code": result.get("model_prediction"),
+                                "response": result.get("model_response")
+                            }
                             logger.debug(f"  {model}: Predicted {result.get('model_prediction', 'N/A')}, Ground truth: {result.get('ground_truth', 'N/A')}")
                     except Exception as e:
                         logger.error(f"  Error querying {model} for {image_id}: {e}")
@@ -301,6 +322,18 @@ def main():
             logger.info(f"Confusion matrix saved to: {os.path.abspath(confusion_path)}")
         logger.info("="*80)
     
+    # Generate consolidated PDF report with all models per image
+    try:
+        combined_pdf_path = os.path.join("results", f"classification_report_{timestamp}.pdf")
+        os.makedirs("results", exist_ok=True)
+        out_pdf = generate_pdf_report(report_items, combined_pdf_path)
+        if out_pdf:
+            logger.info(f"Combined PDF report saved to: {os.path.abspath(out_pdf)}")
+        else:
+            logger.warning("No items to include in PDF report; skipped generation.")
+    except Exception as e:
+        logger.error(f"Failed to generate combined PDF report: {e}")
+
     logger.info(f"\nLog file saved to: {os.path.abspath(log_file)}")
 
 

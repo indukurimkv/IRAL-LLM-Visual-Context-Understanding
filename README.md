@@ -163,6 +163,16 @@ The script generates a JSON file with the following structure:
 
 The script also generates a confusion matrix visualization saved as a PNG image file.
 
+### PDF Report
+
+A combined PDF report is generated at the end of a run and saved under `results/` as `classification_report_<timestamp>.pdf`. Each page contains:
+- Page number and image name at the top
+- The image centered on the page
+- Ground truth annotation (AH code)
+- Predicted hazard codes for each model (with a truncated description from the model response)
+
+This report provides a side-by-side view of all model predictions for each image.
+
 ## Classification Codes
 
 The classification uses a 2-digit code system:
