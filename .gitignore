@@ -14,7 +14,7 @@ pyvenv.cfg
 .env
 
 # Results output
-results/
+results*/
 
 # Log files
 logs/

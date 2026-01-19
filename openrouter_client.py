@@ -10,7 +10,7 @@ from openai import OpenAI
 PROMPT = """
 You are inspecting an environment for anomalies and hazards. Use the following definitions:
 
-    Hazard: Any source of potential damage, harm, or adverse health effects on something or someone under certain conditions at work.
+    Hazard: any source of potential damage, harm, or adverse health effects on something or someone under certain conditions at work.
 
     Anomaly: A scene element that is out of place or unusual but not necessarily dangerous. It is something that breaks expected object–context relations (interposition, support, probability, position, or familiar size); appears in an unlikely place or state; rests on an impossible surface; has an unrealistic size relative to nearby objects; or appears different from its default expected appearance.
 
