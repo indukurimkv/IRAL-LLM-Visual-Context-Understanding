@@ -30,6 +30,11 @@ def main():
         default=None,
         help="Output path for confusion matrix image (default: <input_file>_confusion_matrix.png)"
     )
+    parser.add_argument(
+        "--model-name",
+        default=None,
+        help="Optional model name to include in confusion matrix title"
+    )
     
     args = parser.parse_args()
     
@@ -84,7 +89,7 @@ def main():
         confusion_matrix_file = args.confusion_matrix_output
     
     print(f"\nGenerating confusion matrix...")
-    confusion_matrix_path = generate_confusion_matrix(results, confusion_matrix_file)
+    confusion_matrix_path = generate_confusion_matrix(results, confusion_matrix_file, model_name=args.model_name)
     
     if confusion_matrix_path:
         print(f"\nAnalysis complete!")

@@ -306,7 +306,7 @@ def main():
             confusion_path = os.path.join(model_dir, args.confusion_matrix_output)
         
         logger.info(f"Saving results for {model} to {model_dir}...")
-        processor.save_results(output_path, confusion_path)
+        processor.save_results(output_path, confusion_path, model_name=model)
         
         # Log summary for this model
         logger.info("\n" + "="*80)

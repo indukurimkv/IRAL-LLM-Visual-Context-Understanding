@@ -196,7 +196,7 @@ class ClassificationProcessor:
 
             time.sleep(0.5)
     
-    def save_results(self, output_file: str, confusion_matrix_file: Optional[str] = None):
+    def save_results(self, output_file: str, confusion_matrix_file: Optional[str] = None, model_name: Optional[str] = None):
         """Save results to JSON file."""
         # Calculate statistics for summary
         total_images = len(self.results) + len(self.errors)
@@ -216,7 +216,7 @@ class ClassificationProcessor:
             base_name = os.path.splitext(output_file)[0]
             confusion_matrix_file = f"{base_name}_confusion_matrix.png"
         
-        confusion_matrix_path = generate_confusion_matrix(self.results, confusion_matrix_file)
+        confusion_matrix_path = generate_confusion_matrix(self.results, confusion_matrix_file, model_name=model_name)
         
         # Structure output data with results, errors, and summary statistics
         output_data = {
