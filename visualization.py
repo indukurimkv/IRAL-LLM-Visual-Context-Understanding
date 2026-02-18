@@ -44,6 +44,8 @@ def generate_confusion_matrix(results: List[Dict], output_file: str, model_name:
     display_labels = [class_labels[code] for code in class_codes]
     
     # Generate confusion matrix using sklearn
+    ## Account for different annotation scheme in VERI dataset
+    ground_truth = ["0" + gt if len(gt) == 1 else gt for gt in ground_truth]
     cm = confusion_matrix(
         ground_truth,
         predictions,
