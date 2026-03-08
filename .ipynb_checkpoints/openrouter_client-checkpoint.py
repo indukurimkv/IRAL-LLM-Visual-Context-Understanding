@@ -15,7 +15,7 @@ PROMPT: You are inspecting an environment for anomalies and hazards to help firs
 class OpenRouterClient:
     """Client for interacting with OpenRouter API."""
     
-    def __init__(self, api_key: str, model: str = "anthropic/claude-3.5-sonnet"):
+    def __init__(self, api_key: str, model: str = "anthropic/claude-3.5-sonnet", prompt: str = PROMP):
         # Store API credentials and model identifier
         self.api_key = api_key
         self.model = model
@@ -24,6 +24,7 @@ class OpenRouterClient:
             base_url="https://openrouter.ai/api/v1",
             api_key=api_key
         )
+        self.prompt = prompt
     
     def classify_image(self, image_data: bytes, image_format: str = "png") -> Tuple[Optional[str], str]:
         """
@@ -44,10 +45,47 @@ class OpenRouterClient:
                     {
                         "role": "user",
                         "content": [
-                            {"type": "text", "text": PROMPT},
+                            {"type": "text", "text": self.prompt},
                             {
                                 "type": "image_url",
                                 "image_url": {"url": image_data_url}
+                            }
+                        ]
+                    }
+                ],
+                max_tokens=200  # Limit response length since we only need 2 digits
+            )
+            
+            # Extract model's text response
+            full_response = response.choices[0].message.content.strip()
+            
+            # Parse 2-digit code from response text
+            predicted_code = self._extract_code(full_response)
+            
+            return predicted_code, full_response
+            
+        except Exception as e:
+            print(f"Error querying OpenRouter API: {e}")
+            return None, str(e)
+        
+    def classify_caption(self, caption_data: str) -> Tuple[Optional[str], str]:
+        """
+        Query OpenRouter API for image classification.
+        
+        Returns: (predicted_code, full_response)
+        """
+        try:
+            # Make vision API call with text prompt and image
+            response = self.client.chat.completions.create(
+                model=self.model,
+                messages=[
+                    {
+                        "role": "user",
+                        "content": [
+                            {"type": "text", "text": self.prompt},
+                            {
+                                "type": "text",
+                                "text": caption_data
                             }
                         ]
                     }
