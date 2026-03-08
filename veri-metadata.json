@@ -1,0 +1,808 @@
+{
+    "metadata": {
+        "worskpace_id": "vlm-in-context-anomaly-and-hazard-detection",
+        "project_id": "veri-dataset"
+    },
+    "image_data": {
+        "kqPGqRb9aAj3cRzRCySq": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/kqPGqRb9aAj3cRzRCySq/original.jpg",
+            "label": "1"
+        },
+        "vyzu4H89BV5IpdJOOjJG": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/vyzu4H89BV5IpdJOOjJG/original.jpg",
+            "label": "1"
+        },
+        "5QfGY7vy3T0aN9e0ilBe": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/5QfGY7vy3T0aN9e0ilBe/original.jpg",
+            "label": "0"
+        },
+        "Ac9Nb9CxhxdHAhMhRP6X": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/Ac9Nb9CxhxdHAhMhRP6X/original.jpg",
+            "label": "0"
+        },
+        "hsKtNmnjmSosOQzGdvxP": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/hsKtNmnjmSosOQzGdvxP/original.jpg",
+            "label": "1"
+        },
+        "CSvuldZIg1GYEmfvZipy": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/CSvuldZIg1GYEmfvZipy/original.jpg",
+            "label": "1"
+        },
+        "n0BnmdMGLRlzu6rQDbfp": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/n0BnmdMGLRlzu6rQDbfp/original.jpg",
+            "label": "1"
+        },
+        "DCAHhvVBtHMZ5uKulnU1": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/DCAHhvVBtHMZ5uKulnU1/original.jpg",
+            "label": "0"
+        },
+        "mmzTCdyo6piPr3wq26SJ": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/mmzTCdyo6piPr3wq26SJ/original.jpg",
+            "label": "0"
+        },
+        "mP4x83nrkBObA6fAmkHw": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/mP4x83nrkBObA6fAmkHw/original.jpg",
+            "label": "0"
+        },
+        "u6ydcp481OxuavklehOt": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/u6ydcp481OxuavklehOt/original.jpg",
+            "label": "0"
+        },
+        "9a27wUnixMOOp799YT8J": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/9a27wUnixMOOp799YT8J/original.jpg",
+            "label": "0"
+        },
+        "HLpCDx2kWBJakEnfhtxr": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/HLpCDx2kWBJakEnfhtxr/original.jpg",
+            "label": "1"
+        },
+        "2iBOpSliBRqZCuwEY1aE": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/2iBOpSliBRqZCuwEY1aE/original.jpg",
+            "label": "1"
+        },
+        "cmM3fyJod7eiXZc4Gaqm": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/cmM3fyJod7eiXZc4Gaqm/original.jpg",
+            "label": "0"
+        },
+        "2qm6hboP3Gsih8z0Ya0i": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/2qm6hboP3Gsih8z0Ya0i/original.jpg",
+            "label": "0"
+        },
+        "GC4HtvkrOK1yWxeowPCS": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/GC4HtvkrOK1yWxeowPCS/original.jpg",
+            "label": "0"
+        },
+        "Ct63eNhXRzQAgZyeAnNl": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/Ct63eNhXRzQAgZyeAnNl/original.jpg",
+            "label": "1"
+        },
+        "5h7WTbQtDRRPnMVvqTnA": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/5h7WTbQtDRRPnMVvqTnA/original.jpg",
+            "label": "0"
+        },
+        "RPY51gq8vm6CK21j4Z0H": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/RPY51gq8vm6CK21j4Z0H/original.jpg",
+            "label": "1"
+        },
+        "TcXSuufv6yGMRgaLMmCv": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/TcXSuufv6yGMRgaLMmCv/original.jpg",
+            "label": "1"
+        },
+        "IMMFa6tIYvMEGndoTXxs": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/IMMFa6tIYvMEGndoTXxs/original.jpg",
+            "label": "0"
+        },
+        "2TLdcYJ8sTNVneA8OujH": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/2TLdcYJ8sTNVneA8OujH/original.jpg",
+            "label": "0"
+        },
+        "qAtihJlInMM3l9ivsWWn": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/qAtihJlInMM3l9ivsWWn/original.jpg",
+            "label": "1"
+        },
+        "BnHtpsY6BMHQrOIyiijg": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/BnHtpsY6BMHQrOIyiijg/original.jpg",
+            "label": "0"
+        },
+        "xcKBYksqSj6yqeXKcmSD": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/xcKBYksqSj6yqeXKcmSD/original.jpg",
+            "label": "1"
+        },
+        "D6OrT1n3qtxermYFde9C": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/D6OrT1n3qtxermYFde9C/original.jpg",
+            "label": "1"
+        },
+        "Ne99Vnz00ZnhwsM6uU0G": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/Ne99Vnz00ZnhwsM6uU0G/original.jpg",
+            "label": "1"
+        },
+        "vBriGBKam2WuJUBmRYvI": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/vBriGBKam2WuJUBmRYvI/original.jpg",
+            "label": "0"
+        },
+        "M3ENGE8wcsL7qOoetygt": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/M3ENGE8wcsL7qOoetygt/original.jpg",
+            "label": "1"
+        },
+        "cpEwCcBrfkeb7SVPa7u4": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/cpEwCcBrfkeb7SVPa7u4/original.jpg",
+            "label": "1"
+        },
+        "ACrPCZK8A0ztQzaDIaeI": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/ACrPCZK8A0ztQzaDIaeI/original.jpg",
+            "label": "0"
+        },
+        "3UoxdNqTQuto0RDZAN63": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/3UoxdNqTQuto0RDZAN63/original.jpg",
+            "label": "0"
+        },
+        "zK2dtvHS8h5mNOkzPA4I": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/zK2dtvHS8h5mNOkzPA4I/original.jpg",
+            "label": "1"
+        },
+        "25U2C5ROXNBITczAZA1o": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/25U2C5ROXNBITczAZA1o/original.jpg",
+            "label": "0"
+        },
+        "a2yvg9AtOjnpJpwMWNqo": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/a2yvg9AtOjnpJpwMWNqo/original.jpg",
+            "label": "1"
+        },
+        "lOAVNF7EEffGhwvuDPBm": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/lOAVNF7EEffGhwvuDPBm/original.jpg",
+            "label": "1"
+        },
+        "5I5vgspulzitL2x4rAGc": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/5I5vgspulzitL2x4rAGc/original.jpg",
+            "label": "0"
+        },
+        "9DOmLyqVw5im6Thx7tHf": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/9DOmLyqVw5im6Thx7tHf/original.jpg",
+            "label": "0"
+        },
+        "XzumOpA9jH59yskKQiuq": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/XzumOpA9jH59yskKQiuq/original.jpg",
+            "label": "0"
+        },
+        "pDY2c6fQwlPKVZoOgnjo": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/pDY2c6fQwlPKVZoOgnjo/original.jpg",
+            "label": "1"
+        },
+        "blviyzceLyGyOMe0JfoU": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/blviyzceLyGyOMe0JfoU/original.jpg",
+            "label": "1"
+        },
+        "fNJUoWiglVpSWK6LpEFI": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/fNJUoWiglVpSWK6LpEFI/original.jpg",
+            "label": "0"
+        },
+        "JWlL34W265WmZTgXakal": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/JWlL34W265WmZTgXakal/original.jpg",
+            "label": "0"
+        },
+        "SQrTGFTQlBQjhLXfQMEF": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/SQrTGFTQlBQjhLXfQMEF/original.jpg",
+            "label": "1"
+        },
+        "yNPyH1BMaGl2UBtZz4kt": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/yNPyH1BMaGl2UBtZz4kt/original.jpg",
+            "label": "1"
+        },
+        "tymsIG9YqX4dqlJVoQFS": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/tymsIG9YqX4dqlJVoQFS/original.jpg",
+            "label": "1"
+        },
+        "HXHS24dM6ZLEFDaILb9H": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/HXHS24dM6ZLEFDaILb9H/original.jpg",
+            "label": "1"
+        },
+        "4IsNexx1yW8bxhn7CvJR": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/4IsNexx1yW8bxhn7CvJR/original.jpg",
+            "label": "0"
+        },
+        "GXv6FH4NIE4NJlEjjL72": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/GXv6FH4NIE4NJlEjjL72/original.jpg",
+            "label": "0"
+        },
+        "DUdgK3LE1QBXKUnvythw": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/DUdgK3LE1QBXKUnvythw/original.jpg",
+            "label": "1"
+        },
+        "Wt0I1AJJAGtiNTuSpXbB": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/Wt0I1AJJAGtiNTuSpXbB/original.jpg",
+            "label": "0"
+        },
+        "t5hFOTA9UqkzrpooIGv4": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/t5hFOTA9UqkzrpooIGv4/original.jpg",
+            "label": "1"
+        },
+        "81Z6nZN6TFVSF6l8LcXT": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/81Z6nZN6TFVSF6l8LcXT/original.jpg",
+            "label": "1"
+        },
+        "MRU3Co6PAhghzO4j6r7m": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/MRU3Co6PAhghzO4j6r7m/original.jpg",
+            "label": "0"
+        },
+        "5gRRyU6peyqvhZi3ZwDb": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/5gRRyU6peyqvhZi3ZwDb/original.jpg",
+            "label": "1"
+        },
+        "wStbXFTUHVkZIKjYdfSr": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/wStbXFTUHVkZIKjYdfSr/original.jpg",
+            "label": "0"
+        },
+        "SigWhYuQpJotI7CA0OSo": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/SigWhYuQpJotI7CA0OSo/original.jpg",
+            "label": "1"
+        },
+        "tfnH7nzf8LVmOV0hrYyh": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/tfnH7nzf8LVmOV0hrYyh/original.jpg",
+            "label": "1"
+        },
+        "aFmKDS6yR28vRoEGBOh4": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/aFmKDS6yR28vRoEGBOh4/original.jpg",
+            "label": "1"
+        },
+        "YvUKOmFTyQxhdRzXnlM2": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/YvUKOmFTyQxhdRzXnlM2/original.jpg",
+            "label": "0"
+        },
+        "x53IQ7bkSq4E7Jqc14Bp": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/x53IQ7bkSq4E7Jqc14Bp/original.jpg",
+            "label": "1"
+        },
+        "hXldwEKIvMuFM3LO03f3": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/hXldwEKIvMuFM3LO03f3/original.jpg",
+            "label": "0"
+        },
+        "C0CoMyXafunJW5Iacl4h": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/C0CoMyXafunJW5Iacl4h/original.jpg",
+            "label": "0"
+        },
+        "iIKjwg4IczLTBnNrRUqO": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/iIKjwg4IczLTBnNrRUqO/original.jpg",
+            "label": "0"
+        },
+        "jXaeg5IkdxlNWVA1KrCv": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/jXaeg5IkdxlNWVA1KrCv/original.jpg",
+            "label": "1"
+        },
+        "tS36NGmjPzsKtSedYb2N": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/tS36NGmjPzsKtSedYb2N/original.jpg",
+            "label": "0"
+        },
+        "VgbFWMYkckXhuGdCzXeT": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/VgbFWMYkckXhuGdCzXeT/original.jpg",
+            "label": "0"
+        },
+        "6WNbQiKvTF5v5v615x3Z": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/6WNbQiKvTF5v5v615x3Z/original.jpg",
+            "label": "0"
+        },
+        "LBi9xuv7FrF1yHouXwH8": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/LBi9xuv7FrF1yHouXwH8/original.jpg",
+            "label": "1"
+        },
+        "Cal5bStcq1sdAQHgm2qX": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/Cal5bStcq1sdAQHgm2qX/original.jpg",
+            "label": "0"
+        },
+        "H4xNlU2ODCSH9dv9cVn0": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/H4xNlU2ODCSH9dv9cVn0/original.jpg",
+            "label": "1"
+        },
+        "U3VaaffVFnHEfZ1nterd": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/U3VaaffVFnHEfZ1nterd/original.jpg",
+            "label": "0"
+        },
+        "RCEaw0rsQNTaDg6uiVuc": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/RCEaw0rsQNTaDg6uiVuc/original.jpg",
+            "label": "1"
+        },
+        "jfxm4PZJKtJ7U4eQQoyx": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/jfxm4PZJKtJ7U4eQQoyx/original.jpg",
+            "label": "1"
+        },
+        "hUwQishUbbhAF9Hkao6N": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/hUwQishUbbhAF9Hkao6N/original.jpg",
+            "label": "0"
+        },
+        "vxBhn3uF36kYtlDcbiHo": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/vxBhn3uF36kYtlDcbiHo/original.jpg",
+            "label": "1"
+        },
+        "NRUtkbiM9bvCDzP0XIeY": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/NRUtkbiM9bvCDzP0XIeY/original.jpg",
+            "label": "0"
+        },
+        "VC8PcvaxgAbyZnjlFiUH": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/VC8PcvaxgAbyZnjlFiUH/original.jpg",
+            "label": "0"
+        },
+        "cFlIjJKTu9IxYFznFHah": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/cFlIjJKTu9IxYFznFHah/original.jpg",
+            "label": "0"
+        },
+        "dOxVICHQi9YxyQ0SrNj0": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/dOxVICHQi9YxyQ0SrNj0/original.jpg",
+            "label": "0"
+        },
+        "vbFSTb0CkU2EpxNLGWoA": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/vbFSTb0CkU2EpxNLGWoA/original.jpg",
+            "label": "0"
+        },
+        "B8mNB2qtsuJtJdDgrQeg": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/B8mNB2qtsuJtJdDgrQeg/original.jpg",
+            "label": "0"
+        },
+        "k9O9pqAa3OFBijITeE2u": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/k9O9pqAa3OFBijITeE2u/original.jpg",
+            "label": "0"
+        },
+        "DWYv6bT4Beny7HHiZi5h": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/DWYv6bT4Beny7HHiZi5h/original.jpg",
+            "label": "0"
+        },
+        "ZqA7O3rw7HTg2CHZWdrU": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/ZqA7O3rw7HTg2CHZWdrU/original.jpg",
+            "label": "1"
+        },
+        "fDF1yE9mYSLpTzJlwn5O": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/fDF1yE9mYSLpTzJlwn5O/original.jpg",
+            "label": "0"
+        },
+        "flR2Mh8b708foqk8jxRk": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/flR2Mh8b708foqk8jxRk/original.jpg",
+            "label": "1"
+        },
+        "FqNBP4fCX21c3AEaSmP7": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/FqNBP4fCX21c3AEaSmP7/original.jpg",
+            "label": "1"
+        },
+        "HmviZBDRRSCOySchjXTl": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/HmviZBDRRSCOySchjXTl/original.jpg",
+            "label": "1"
+        },
+        "sLDa6jHpde043iCw52tf": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/sLDa6jHpde043iCw52tf/original.jpg",
+            "label": "1"
+        },
+        "ejG160M6Ty2JcoD3Ap1h": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/ejG160M6Ty2JcoD3Ap1h/original.jpg",
+            "label": "1"
+        },
+        "87d2OUaMfA2LJ24o9Kxn": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/87d2OUaMfA2LJ24o9Kxn/original.jpg",
+            "label": "1"
+        },
+        "ZHSQasTfjNqkqX94jiZH": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/ZHSQasTfjNqkqX94jiZH/original.jpg",
+            "label": "0"
+        },
+        "ZlNwIQQwsXrZsCKkTokQ": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/ZlNwIQQwsXrZsCKkTokQ/original.jpg",
+            "label": "1"
+        },
+        "cn9OHC7QR1H14W5sdeYU": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/cn9OHC7QR1H14W5sdeYU/original.jpg",
+            "label": "0"
+        },
+        "JkVwcoK7OvjLypMBmkPn": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/JkVwcoK7OvjLypMBmkPn/original.jpg",
+            "label": "0"
+        },
+        "KHssBcuy2UjKO9kaOECg": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/KHssBcuy2UjKO9kaOECg/original.jpg",
+            "label": "1"
+        },
+        "TPUiO3Jiexns7iqcoin9": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/TPUiO3Jiexns7iqcoin9/original.jpg",
+            "label": "1"
+        },
+        "CSsn8jCfRVBACzFCt7nV": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/CSsn8jCfRVBACzFCt7nV/original.jpg",
+            "label": "1"
+        },
+        "IxRAsJ8whl9RbhOpSPa3": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/IxRAsJ8whl9RbhOpSPa3/original.jpg",
+            "label": "1"
+        },
+        "8vM85uqHyCua9v0ty1zB": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/8vM85uqHyCua9v0ty1zB/original.jpg",
+            "label": "1"
+        },
+        "t02k4mZH2BsVZ8ImAY9e": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/t02k4mZH2BsVZ8ImAY9e/original.jpg",
+            "label": "0"
+        },
+        "pS46I5sS9zrIKXh6v01O": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/pS46I5sS9zrIKXh6v01O/original.jpg",
+            "label": "1"
+        },
+        "ETMlsKp6seAcRZehH3c3": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/ETMlsKp6seAcRZehH3c3/original.jpg",
+            "label": "0"
+        },
+        "UMpHIQ8JJ0gqWHLwjZVP": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/UMpHIQ8JJ0gqWHLwjZVP/original.jpg",
+            "label": "1"
+        },
+        "Nb5OieVa54VJ9LO8Jk8G": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/Nb5OieVa54VJ9LO8Jk8G/original.jpg",
+            "label": "1"
+        },
+        "p7rlq920ei9S8LgeyvUv": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/p7rlq920ei9S8LgeyvUv/original.jpg",
+            "label": "1"
+        },
+        "Bg9sHQ2yaV12CN9yGA3I": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/Bg9sHQ2yaV12CN9yGA3I/original.jpg",
+            "label": "0"
+        },
+        "ZcWj7MYfRLXQlJfCZZa9": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/ZcWj7MYfRLXQlJfCZZa9/original.jpg",
+            "label": "0"
+        },
+        "3bV0qpEdAAYDXcLcxv3M": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/3bV0qpEdAAYDXcLcxv3M/original.jpg",
+            "label": "0"
+        },
+        "KWPll1exzWucMHuZE1Ez": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/KWPll1exzWucMHuZE1Ez/original.jpg",
+            "label": "1"
+        },
+        "yUT8HSWSuTZIKQbFvSFB": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/yUT8HSWSuTZIKQbFvSFB/original.jpg",
+            "label": "0"
+        },
+        "RHKdjYqY8CQQiJp3JPGe": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/RHKdjYqY8CQQiJp3JPGe/original.jpg",
+            "label": "0"
+        },
+        "cfOpoMru48Evi0tcfBOF": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/cfOpoMru48Evi0tcfBOF/original.jpg",
+            "label": "0"
+        },
+        "G8AeMjkeg6U9EJCiVnIn": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/G8AeMjkeg6U9EJCiVnIn/original.jpg",
+            "label": "1"
+        },
+        "r7qnqgjpbz6gHndecvoB": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/r7qnqgjpbz6gHndecvoB/original.jpg",
+            "label": "0"
+        },
+        "7F8l50ygsJYnhsvxZMEf": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/7F8l50ygsJYnhsvxZMEf/original.jpg",
+            "label": "0"
+        },
+        "8O0C3TV1E6ypXnOUHfuj": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/8O0C3TV1E6ypXnOUHfuj/original.jpg",
+            "label": "1"
+        },
+        "DKE8sZY6GXcx9F2UUZki": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/DKE8sZY6GXcx9F2UUZki/original.jpg",
+            "label": "1"
+        },
+        "xgfwwegOOB4wOlOEFgAe": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/xgfwwegOOB4wOlOEFgAe/original.jpg",
+            "label": "0"
+        },
+        "uvUFCKEmAUHpysagCwDl": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/uvUFCKEmAUHpysagCwDl/original.jpg",
+            "label": "1"
+        },
+        "G4ZOv3T6BoRZuDU9AM3H": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/G4ZOv3T6BoRZuDU9AM3H/original.jpg",
+            "label": "1"
+        },
+        "LaY6L22KrvN1VtUFXGZh": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/LaY6L22KrvN1VtUFXGZh/original.jpg",
+            "label": "0"
+        },
+        "XDX4ItefSJdgFpbv9h5v": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/XDX4ItefSJdgFpbv9h5v/original.jpg",
+            "label": "0"
+        },
+        "vUHBX6IZbyrkfR6jozdr": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/vUHBX6IZbyrkfR6jozdr/original.jpg",
+            "label": "1"
+        },
+        "5xTh1Il0q1vm9jdHdTPN": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/5xTh1Il0q1vm9jdHdTPN/original.jpg",
+            "label": "0"
+        },
+        "8dvAj4JIP1N6s47dv6du": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/8dvAj4JIP1N6s47dv6du/original.jpg",
+            "label": "1"
+        },
+        "RsIjhzkPvZfH5ZQokAQO": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/RsIjhzkPvZfH5ZQokAQO/original.jpg",
+            "label": "1"
+        },
+        "cRtGwVhw3w0oHvFqfc6A": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/cRtGwVhw3w0oHvFqfc6A/original.jpg",
+            "label": "0"
+        },
+        "hyk25SxOUOfMKBHzHnB6": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/hyk25SxOUOfMKBHzHnB6/original.jpg",
+            "label": "1"
+        },
+        "BCDiYMtkfN5agXUhQKnV": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/BCDiYMtkfN5agXUhQKnV/original.jpg",
+            "label": "0"
+        },
+        "ky79mGu7bnxjHDOuUluE": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/ky79mGu7bnxjHDOuUluE/original.jpg",
+            "label": "0"
+        },
+        "iN8jwvg2H3RA96wTP7FV": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/iN8jwvg2H3RA96wTP7FV/original.jpg",
+            "label": "1"
+        },
+        "BiD1At1swy0s5NFtXw4P": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/BiD1At1swy0s5NFtXw4P/original.jpg",
+            "label": "1"
+        },
+        "FnJPhXZDU88mUhPFYAIa": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/FnJPhXZDU88mUhPFYAIa/original.jpg",
+            "label": "1"
+        },
+        "3Zg3IZTzjZbySJsuoWtT": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/3Zg3IZTzjZbySJsuoWtT/original.jpg",
+            "label": "0"
+        },
+        "FUXiqVDhtZ0sNW1AVWdE": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/FUXiqVDhtZ0sNW1AVWdE/original.jpg",
+            "label": "0"
+        },
+        "ww3DkvM9uKpa9NX41jlK": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/ww3DkvM9uKpa9NX41jlK/original.jpg",
+            "label": "1"
+        },
+        "dbHz28yzEQFBtkLtSvIR": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/dbHz28yzEQFBtkLtSvIR/original.jpg",
+            "label": "1"
+        },
+        "VtbyOYQcRWsKIMNIFou1": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/VtbyOYQcRWsKIMNIFou1/original.jpg",
+            "label": "0"
+        },
+        "oukxSR4oCuxxRod8BaTJ": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/oukxSR4oCuxxRod8BaTJ/original.jpg",
+            "label": "0"
+        },
+        "OxdjJzvxcgbMGo3NLRCe": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/OxdjJzvxcgbMGo3NLRCe/original.jpg",
+            "label": "1"
+        },
+        "0CfBQS6Uj65kg1AIXnWZ": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/0CfBQS6Uj65kg1AIXnWZ/original.jpg",
+            "label": "0"
+        },
+        "fndLE8411XQSszo28mf7": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/fndLE8411XQSszo28mf7/original.jpg",
+            "label": "0"
+        },
+        "JZfD6ZO6DOWRZliU7Ifz": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/JZfD6ZO6DOWRZliU7Ifz/original.jpg",
+            "label": "1"
+        },
+        "Y3ZqxturiWh3JVQ4rvJG": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/Y3ZqxturiWh3JVQ4rvJG/original.jpg",
+            "label": "1"
+        },
+        "UMalD4slAPCaFFFw8Ayj": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/UMalD4slAPCaFFFw8Ayj/original.jpg",
+            "label": "1"
+        },
+        "XGA4hqHgKGH3dPM6fNkE": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/XGA4hqHgKGH3dPM6fNkE/original.jpg",
+            "label": "0"
+        },
+        "jeelpgqbyYgKen90GiTu": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/jeelpgqbyYgKen90GiTu/original.jpg",
+            "label": "1"
+        },
+        "l0kI31oER2qCsi0bTaY0": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/l0kI31oER2qCsi0bTaY0/original.jpg",
+            "label": "0"
+        },
+        "Qd0u71U4SEnptN4CImaX": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/Qd0u71U4SEnptN4CImaX/original.jpg",
+            "label": "0"
+        },
+        "pHaYkinHsTOOODI9aJf6": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/pHaYkinHsTOOODI9aJf6/original.jpg",
+            "label": "0"
+        },
+        "GiKXrHpJ3jIQgS63dAti": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/GiKXrHpJ3jIQgS63dAti/original.jpg",
+            "label": "0"
+        },
+        "e4JTdRAFbTYKvJOjsIJy": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/e4JTdRAFbTYKvJOjsIJy/original.jpg",
+            "label": "0"
+        },
+        "Ny6hG4rRike2YAROBsx3": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/Ny6hG4rRike2YAROBsx3/original.jpg",
+            "label": "1"
+        },
+        "QGqXeV9uDXmdWGf6wx8O": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/QGqXeV9uDXmdWGf6wx8O/original.jpg",
+            "label": "0"
+        },
+        "uruMO5G8FiZGx48yfYVA": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/uruMO5G8FiZGx48yfYVA/original.jpg",
+            "label": "0"
+        },
+        "Zquf32dFZIZUb93dujkg": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/Zquf32dFZIZUb93dujkg/original.jpg",
+            "label": "1"
+        },
+        "9o4ZDcoSaQPKMPVYLV04": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/9o4ZDcoSaQPKMPVYLV04/original.jpg",
+            "label": "0"
+        },
+        "7FZKg58GrypIWMgc0SI7": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/7FZKg58GrypIWMgc0SI7/original.jpg",
+            "label": "1"
+        },
+        "5FwRACx5OODmknvDcXSP": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/5FwRACx5OODmknvDcXSP/original.jpg",
+            "label": "1"
+        },
+        "7sDLX9aus5tD6nGa0k4O": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/7sDLX9aus5tD6nGa0k4O/original.jpg",
+            "label": "1"
+        },
+        "U0K2Pj2W9EKGBMGxB82x": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/U0K2Pj2W9EKGBMGxB82x/original.jpg",
+            "label": "0"
+        },
+        "TTsrQGq74taFt4UDQZ5q": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/TTsrQGq74taFt4UDQZ5q/original.jpg",
+            "label": "1"
+        },
+        "HkV5RSUel2NKo9EXy5s4": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/HkV5RSUel2NKo9EXy5s4/original.jpg",
+            "label": "1"
+        },
+        "ieEj0nIK8sBlboIeMcip": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/ieEj0nIK8sBlboIeMcip/original.jpg",
+            "label": "1"
+        },
+        "J35yjfAoJ4W9XDhlbws3": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/J35yjfAoJ4W9XDhlbws3/original.jpg",
+            "label": "0"
+        },
+        "8zGdXFwyG9fuFdB16Quf": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/8zGdXFwyG9fuFdB16Quf/original.jpg",
+            "label": "0"
+        },
+        "ZY0E03shJQwccV5aNxi9": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/ZY0E03shJQwccV5aNxi9/original.jpg",
+            "label": "0"
+        },
+        "hdtY7bspM5dVVk8oV0Qh": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/hdtY7bspM5dVVk8oV0Qh/original.jpg",
+            "label": "0"
+        },
+        "ALjBG1ANkKYx1o5zN1d4": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/ALjBG1ANkKYx1o5zN1d4/original.jpg",
+            "label": "0"
+        },
+        "KECrb6neC4HlgRBi2xpu": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/KECrb6neC4HlgRBi2xpu/original.jpg",
+            "label": "1"
+        },
+        "bi4iTBwXG1eO9ZmC7guS": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/bi4iTBwXG1eO9ZmC7guS/original.jpg",
+            "label": "1"
+        },
+        "hrevyyKrCNsr89BoSfuM": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/hrevyyKrCNsr89BoSfuM/original.jpg",
+            "label": "0"
+        },
+        "lH3e52IhPNxbGBFZFwKT": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/lH3e52IhPNxbGBFZFwKT/original.jpg",
+            "label": "1"
+        },
+        "w9gjZqkHP0U2CSqflTa7": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/w9gjZqkHP0U2CSqflTa7/original.jpg",
+            "label": "1"
+        },
+        "QRKdcCFKpZVNSj4FJ40N": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/QRKdcCFKpZVNSj4FJ40N/original.jpg",
+            "label": "1"
+        },
+        "qQA1YYrD7zuT6EuPVTvY": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/qQA1YYrD7zuT6EuPVTvY/original.jpg",
+            "label": "0"
+        },
+        "F28GtyWY2h9kay8mbmVT": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/F28GtyWY2h9kay8mbmVT/original.jpg",
+            "label": "0"
+        },
+        "1Jw1ik4Ujt0cZQIkO8cv": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/1Jw1ik4Ujt0cZQIkO8cv/original.jpg",
+            "label": "1"
+        },
+        "PegLZD9kRKY1j66ba3wq": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/PegLZD9kRKY1j66ba3wq/original.jpg",
+            "label": "0"
+        },
+        "dZZEMjjqwBnf6Ui4Dru9": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/dZZEMjjqwBnf6Ui4Dru9/original.jpg",
+            "label": "1"
+        },
+        "p19NzXbKPN4uVEXfpEM3": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/p19NzXbKPN4uVEXfpEM3/original.jpg",
+            "label": "0"
+        },
+        "smQMTAOWLyVevL0w93hQ": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/smQMTAOWLyVevL0w93hQ/original.jpg",
+            "label": "0"
+        },
+        "P2zUm6wOFOcER6Kn90Wp": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/P2zUm6wOFOcER6Kn90Wp/original.jpg",
+            "label": "1"
+        },
+        "4CaVedkjv2f0V5Hnuv3u": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/4CaVedkjv2f0V5Hnuv3u/original.jpg",
+            "label": "1"
+        },
+        "IzKL5uuJ1vzDohfBryEZ": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/IzKL5uuJ1vzDohfBryEZ/original.jpg",
+            "label": "1"
+        },
+        "LbeunI4KyLY6o23JTlDY": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/LbeunI4KyLY6o23JTlDY/original.jpg",
+            "label": "0"
+        },
+        "tDDASDiDbKvvD5ameb28": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/tDDASDiDbKvvD5ameb28/original.jpg",
+            "label": "1"
+        },
+        "hA14xeHuZC0E7MD5ttQG": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/hA14xeHuZC0E7MD5ttQG/original.jpg",
+            "label": "0"
+        },
+        "7E01WsNmIF8NoyXfxv8t": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/7E01WsNmIF8NoyXfxv8t/original.jpg",
+            "label": "1"
+        },
+        "q6cA2r1Z41jVf062dNjl": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/q6cA2r1Z41jVf062dNjl/original.jpg",
+            "label": "0"
+        },
+        "8IOxS7tPAMSZb6CtlcNy": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/8IOxS7tPAMSZb6CtlcNy/original.jpg",
+            "label": "0"
+        },
+        "6ddnHHKOjY7TeNjKM8oE": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/6ddnHHKOjY7TeNjKM8oE/original.jpg",
+            "label": "1"
+        },
+        "8NxJaxRrOYgsoRsRUegq": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/8NxJaxRrOYgsoRsRUegq/original.jpg",
+            "label": "1"
+        },
+        "b7qbXudcinZ4rMYELZwf": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/b7qbXudcinZ4rMYELZwf/original.jpg",
+            "label": "0"
+        },
+        "UCGLQ25wI0lbvf8Ohk5H": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/UCGLQ25wI0lbvf8Ohk5H/original.jpg",
+            "label": "1"
+        },
+        "IM9MsFGGYc0i36zs69RT": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/IM9MsFGGYc0i36zs69RT/original.jpg",
+            "label": "1"
+        },
+        "Ge2oBOoMxLgBdRguemV9": {
+            "url": "https://source.roboflow.com/1xWq74G9WjZc9URmJ7tZ8ho2f1Z2/Ge2oBOoMxLgBdRguemV9/original.jpg",
+            "label": "0"
+        }
+    }
+}
