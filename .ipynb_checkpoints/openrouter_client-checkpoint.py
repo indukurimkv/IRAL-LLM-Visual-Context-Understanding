@@ -15,7 +15,7 @@ PROMPT: You are inspecting an environment for anomalies and hazards to help firs
 class OpenRouterClient:
     """Client for interacting with OpenRouter API."""
     
-    def __init__(self, api_key: str, model: str = "anthropic/claude-3.5-sonnet", prompt: str = PROMP):
+    def __init__(self, api_key: str, model: str = "anthropic/claude-3.5-sonnet", prompt: str = PROMPT):
         # Store API credentials and model identifier
         self.api_key = api_key
         self.model = model
@@ -82,7 +82,6 @@ class OpenRouterClient:
                     {
                         "role": "user",
                         "content": [
-                            {"type": "text", "text": self.prompt},
                             {
                                 "type": "text",
                                 "text": caption_data
