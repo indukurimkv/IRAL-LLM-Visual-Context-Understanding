@@ -89,7 +89,7 @@ class OpenRouterClient:
                         ]
                     }
                 ],
-                max_tokens=200  # Limit response length since we only need 2 digits
+                max_tokens=500  # Limit response length since we only need 2 digits
             )
             
             # Extract model's text response
