@@ -16,5 +16,8 @@ pyvenv.cfg
 # Results output
 results*/
 
+# Captions output
+Captions/*
+
 # Log files
 logs/
