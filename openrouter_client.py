@@ -68,7 +68,7 @@ class OpenRouterClient:
             print(f"Error querying OpenRouter API: {e}")
             return None, str(e)
         
-    def classify_caption(self, caption_data: str) -> Tuple[Optional[str], str]:
+    def classify_caption(self, model: str, caption_data: str) -> Tuple[Optional[str], str]:
         """
         Query OpenRouter API for image classification.
         
@@ -77,7 +77,7 @@ class OpenRouterClient:
         try:
             # Make vision API call with text prompt and image
             response = self.client.chat.completions.create(
-                model=self.model,
+                model=model,
                 messages=[
                     {
                         "role": "user",
@@ -101,6 +101,7 @@ class OpenRouterClient:
             return predicted_code, full_response
             
         except Exception as e:
+            print(f'Using model {model}')
             print(f"Error querying OpenRouter API: {e}")
             return None, str(e)
     
@@ -108,7 +109,7 @@ class OpenRouterClient:
     def _extract_code(response: str) -> Optional[str]:
         """Extract 2-digit code from model response."""
         # Use regex to find first 2-digit number (word boundaries ensure exact match)
-        match = re.search(r'\b\d{2}\b', response)
+        match = re.search(r'\b\d{2}\b', response[-15:])
         if match:
             # Return the matched 2-digit code
             return match.group(0)
